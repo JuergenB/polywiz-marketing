@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+  /* ── Typography ── */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+
+  /* ── PolyWiz Brand Colors ── */
+  --color-primary-50: #fef0ec;
+  --color-primary-100: #fcd9cf;
+  --color-primary-200: #f5b8a8;
+  --color-primary-300: #e8957e;
+  --color-primary-400: #e07a5f;
+  --color-primary-500: #d46a4f;
+  --color-primary-600: #c96a51;
+  --color-primary-700: #b05a44;
+  --color-primary-800: #8c4836;
+  --color-primary-900: #6b3728;
+
+  --color-secondary-50: #eff7f3;
+  --color-secondary-100: #d4eae0;
+  --color-secondary-200: #b5dbcb;
+  --color-secondary-300: #9bc4b0;
+  --color-secondary-400: #81b29a;
+  --color-secondary-500: #6a9a82;
+  --color-secondary-600: #5a8670;
+  --color-secondary-700: #4a705d;
+  --color-secondary-800: #3a5a4a;
+  --color-secondary-900: #2a4437;
+
+  --color-accent-50: #fdf6e8;
+  --color-accent-100: #f9e8c4;
+  --color-accent-200: #f5d9a8;
+  --color-accent-300: #f2cc8f;
+  --color-accent-400: #e8bc75;
+  --color-accent-500: #d4a853;
+  --color-accent-600: #b8903a;
+  --color-accent-700: #9a7830;
+  --color-accent-800: #7c6026;
+  --color-accent-900: #5e481c;
+
+  /* ── Border Radius ── */
+  --radius-4xl: 2rem;
+
+  /* ── Container ── */
+  --container-7xl: 80rem;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
