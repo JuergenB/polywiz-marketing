@@ -32,7 +32,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-sm font-semibold uppercase tracking-wider text-primary-400"
+            className="text-sm font-semibold uppercase tracking-[0.25em] text-primary-400/90"
           >
             Campaign Automation for Arts Organizations
           </motion.p>
