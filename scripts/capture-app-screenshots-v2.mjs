@@ -7,7 +7,7 @@ const FEATURES_DIR = path.resolve(__dirname, '..', 'public', 'images', 'features
 
 const APP_URL = 'http://localhost:3025';
 const EMAIL = 'juergen@polymash.com';
-const PASSWORD = 'REDACTED';
+const PASSWORD = process.env.POLYWIZ_APP_PASSWORD;
 
 async function login(page) {
   await page.goto(`${APP_URL}/login`, { waitUntil: 'networkidle' });
