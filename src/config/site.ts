@@ -3,7 +3,7 @@ export const siteConfig = {
   byline: 'by Polymash',
   description:
     'Sustained social media campaigns for arts organizations, nonprofits, and creative institutions.',
-  tagline: 'Give your art the sustained social media presence it deserves',
+  tagline: 'Give your arts organization the social media presence it deserves',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://polywiz.polymash.com',
 
   navigation: {

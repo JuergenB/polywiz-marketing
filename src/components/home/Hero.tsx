@@ -41,7 +41,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.08 }}
-            className="mx-auto mt-4 max-w-4xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mx-auto mt-4 max-w-4xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.25rem] lg:leading-[1.15]"
           >
             {siteConfig.tagline}
           </motion.h1>
@@ -52,10 +52,11 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0.16 }}
             className="mx-auto mt-6 max-w-2xl text-xl/8 text-gray-400"
           >
-            Most exhibitions get one social post on opening night, then silence.
-            PolyWiz generates weeks of platform-specific posts, designs carousel
-            covers, and schedules everything across {siteConfig.platforms.length} platforms
-            — with human approval before anything goes live.
+            Exhibitions, newsletters, podcast episodes, events — most get a
+            single post on launch day, then silence. PolyWiz generates weeks of
+            platform-specific content, designs carousel covers, and schedules
+            everything across {siteConfig.platforms.length} platforms — with human approval
+            before anything goes live.
           </motion.p>
 
           <motion.div
