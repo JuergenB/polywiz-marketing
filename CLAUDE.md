@@ -4,7 +4,7 @@
 - Next.js 16 marketing/landing site for **PolyWiz** by Polymash
 - Deployed via Vercel at **polywiz.polymash.com**
 - GitHub repo: JuergenB/polywiz-marketing
-- **Companion app repo:** https://github.com/JuergenB/social-media-promo-scheduler (local: `/Users/juergenberkessel/Projects/social-media-promo-scheduler`)
+- **Companion app repo:** https://github.com/JuergenB/polywiz-app (local: `/Users/juergenberkessel/Projects/polywiz-app`)
 
 ## What Is PolyWiz?
 PolyWiz is a campaign planning tool that gives **arts organizations, 501(c)(3) nonprofits, newsletter publishers, and creative institutions** sustained social media presence across 13 platforms. Instead of a single opening-night post, PolyWiz generates and schedules dozens of platform-specific posts over weeks and months — with human approval before anything goes live.

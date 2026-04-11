@@ -7,7 +7,7 @@ Create a single-page marketing/landing site for PolyWiz that establishes the pro
 - PolyWiz is a campaign planning tool built by Polymash
 - The app is in active development (Phase I near-complete, Phases II-IV planned)
 - No public pricing model yet — this is an awareness/waitlist play
-- The companion app repo is at `/Users/juergenberkessel/Projects/social-media-promo-scheduler`
+- The companion app repo is at `/Users/juergenberkessel/Projects/polywiz-app`
 - The architectural reference is at `/Users/juergenberkessel/Projects/visibility-labs-marketing`
 
 ## Design Direction

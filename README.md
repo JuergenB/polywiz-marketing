@@ -40,5 +40,5 @@ npm run dev        # http://localhost:3002
 ```
 
 ## Related
-- **App repo:** [social-media-promo-scheduler](https://github.com/JuergenB/social-media-promo-scheduler)
+- **App repo:** [polywiz-app](https://github.com/JuergenB/polywiz-app)
 - **Architecture reference:** [visibility-labs-marketing](https://github.com/JuergenB/visibilitylabs-marketing)
