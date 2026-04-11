@@ -55,6 +55,14 @@ export function EarlyAccessModal({ open, onClose }: EarlyAccessModalProps) {
         return;
       }
 
+      // Track conversion funnel step 2: form submitted
+      if (typeof window !== 'undefined' && (window as any).usermaven) {
+        (window as any).usermaven('track', 'early_access_submitted', {
+          organization: form.organization,
+          role: form.role || 'not provided',
+        });
+      }
+
       setStatus('success');
     } catch {
       setStatus('error');
