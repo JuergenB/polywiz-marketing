@@ -34,3 +34,7 @@ next-env.d.ts
 
 # templates (large, not needed in repo)
 .templates/
+
+# dev artifacts
+/screenshots-verify/
+/test-results/

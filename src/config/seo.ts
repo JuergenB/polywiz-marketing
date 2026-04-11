@@ -17,7 +17,7 @@ export const seoConfig = {
     home: {
       title: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
       description:
-        'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 14 platforms — with human approval before anything goes live.',
+        'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 13 platforms — with human approval before anything goes live.',
       keywords: [
         'social media management',
         'arts organizations',

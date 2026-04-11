@@ -7,7 +7,7 @@
 - **Companion app repo:** https://github.com/JuergenB/social-media-promo-scheduler (local: `/Users/juergenberkessel/Projects/social-media-promo-scheduler`)
 
 ## What Is PolyWiz?
-PolyWiz is a campaign planning tool that gives **arts organizations, 501(c)(3) nonprofits, newsletter publishers, and creative institutions** sustained social media presence across 14 platforms. Instead of a single opening-night post, PolyWiz generates and schedules dozens of platform-specific posts over weeks and months — with human approval before anything goes live.
+PolyWiz is a campaign planning tool that gives **arts organizations, 501(c)(3) nonprofits, newsletter publishers, and creative institutions** sustained social media presence across 13 platforms. Instead of a single opening-night post, PolyWiz generates and schedules dozens of platform-specific posts over weeks and months — with human approval before anything goes live.
 
 **Built by Polymash for Arterial and its brands:** Not Real Art, Artsville USA, Sugar Press Art, The Intersect.
 
@@ -118,12 +118,16 @@ Present PolyWiz's capabilities as benefit-focused cards/sections:
 |---------|-----------------|-------------|
 | Campaign Planner | Drop in a URL, get a campaign | Paste your exhibition page, newsletter, or event — PolyWiz scrapes the content and builds a multi-week campaign |
 | AI Post Generator | Platform-perfect drafts in seconds | Claude generates posts tuned for each platform's voice, length, and audience — from LinkedIn articles to Instagram captions |
-| Smart Scheduler | Months of promotion, not just opening night | Tapering algorithm distributes posts over weeks/months with platform-appropriate cadence |
-| Approval Queue | Nothing goes live without your say | Every post is a draft until your team approves it — review, edit, swap images, then publish |
-| Multi-Platform Publisher | 14 platforms, one dashboard | Instagram, LinkedIn, X, Threads, Bluesky, TikTok, Facebook, Pinterest, YouTube, and more |
-| Brand Manager | One tool, all your brands | Switch between organizations with distinct voice, tone, and connected accounts |
-| Image Optimizer | Gallery-ready visuals, platform-optimized | Auto-crop, compress, and AI-extend images to fit each platform's requirements |
+| Tone & Voice System | Eight dimensions of brand voice control | Fine-tune Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, and Intimacy per brand |
+| Smart Scheduler | Months of promotion, not just opening night | Tapering algorithm distributes posts over weeks/months with per-brand cadence |
+| Quick Post | One-off posts without the overhead | Standalone single-post creation for timely announcements — no campaign required |
+| Cover Slide Designer | Branded carousel covers in clicks | Template-driven cover slides with band-based layout, color picker, and AI headlines |
+| Approval Queue | Nothing goes live without your say | Every post is a draft — review, edit, browse campaign images, approve individually or in bulk |
+| Multi-Platform Publisher | 13 platforms, one dashboard | Instagram, LinkedIn, X, Threads, Bluesky, TikTok, Facebook, Pinterest, YouTube, and more |
+| Brand Manager | One tool, all your brands | Switch between organizations with distinct voice dimensions, cadence, and connected accounts |
+| Image Optimizer | Gallery-ready visuals, platform-optimized | Auto-crop, compress, AI outpaint, and optimize images to fit each platform's requirements |
 | Link Shortener | Branded links with tracking built in | Short.io integration with per-brand domains and UTM parameters |
+| Campaign Dashboard | Real-time stats across all campaigns | Configurable time ranges, pending queue, scheduled heatmap, failed alerts |
 
 ### Opportunity Statement
 Frame around the pain point:
@@ -135,7 +139,7 @@ Frame around the pain point:
 
 ### Social Proof / Trust Signals
 - "Built for Arterial, Not Real Art, Artsville USA, and The Intersect"
-- "Powering campaigns across 14 social platforms"
+- "Powering campaigns across 13 social platforms"
 - Campaign type variety: exhibitions, newsletters, podcasts, events, open calls, artist profiles
 
 ## Conventions
@@ -144,6 +148,14 @@ Frame around the pain point:
 - Use absolute paths for all Bash commands
 - For git commands: use `git -C <repo-path>` instead of `cd` + `git`
 - **Opportunity framing:** Use "The Opportunity" heading (never "The Problem") — same convention as Visibility Labs
+
+### Image Management (MANDATORY)
+Every time an image is added or replaced — whether from CleanShot, Playwright, or any other source — **both** of these steps must happen in the same operation. Do not commit one without the other:
+
+1. **Descriptive filename:** Rename to kebab-case describing what the image shows (e.g., `campaign-types-grid-dark.png`, `approval-queue-post-cards.png`). Never keep `CleanShot...` names or generic `option-N` names.
+2. **Descriptive alt text:** The `caption` field in the feature registry (or `alt` prop on `<Image>`) must describe what's visible in the screenshot — not just the feature name. Good: "11 color-coded campaign types from Newsletter to Custom". Bad: "Campaign types".
+
+This applies to all image additions across the entire project, not just feature screenshots.
 
 ## Tech Stack
 - **Framework:** Next.js 16, React 19, TypeScript
@@ -178,32 +190,42 @@ NEXT_PUBLIC_SITE_URL=https://polywiz.polymash.com
 ## PolyWiz Feature Inventory (from app repo)
 These are the actual capabilities to market. Keep this list updated as the app evolves.
 
-### Live (Phase I Complete)
-- Campaign creation from URL (Firecrawl scraping)
-- AI post generation (Claude Sonnet 4.6, brand-aware)
+### Live
+- Campaign creation from URL (Firecrawl scraping with smart image filtering)
+- AI post generation (Claude Sonnet 4.6, brand-aware, dynamic rules per campaign type)
 - 11 campaign types (Newsletter, Exhibition, Artist Profile, Podcast, Event, Open Call, Blog, Public Art, Video/Film, Institutional, Custom)
+- **Quick Post** — standalone single-post creation without campaign context
+- **8-dimension Tone & Voice system** (Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, Intimacy) with master intensity slider and per-brand defaults
+- **Cover Slide Designer** — template-driven editorial covers for carousel posts with band-based layout, eyedropper colors, font sizing, AI headlines
+- **Multi-platform carousel support** (Instagram, Threads, Bluesky, LinkedIn PDF)
+- **Campaign Image Library** — scraped images surface as clickable gallery during post editing
 - Approval queue with approve/dismiss/bulk actions
-- Post inline editing (text + image swap)
-- Calendar view with day-by-day timeline
-- Tapering schedule algorithm (Sprint/Standard/Evergreen/Marathon)
-- Per-platform cadence and collision avoidance
-- Multi-brand support (voice, API keys, switching)
-- Zernio publishing to 14 platforms
-- Webhook status sync (published/failed/partial)
-- Image optimization (client + server side)
-- Vercel Blob permanent image hosting
-- Short.io branded link shortening with UTM
+- Post inline editing (text + image swap + multi-image captions)
+- Calendar heatmap with day-by-day timeline visualization
+- Tapering schedule algorithm (Sprint/Standard/Evergreen/Marathon) with distribution bias
+- Per-brand and per-platform cadence with collision avoidance
+- Multi-brand support (voice dimensions, cadence defaults, API keys, timezone, logo variants)
+- Zernio publishing to 13 platforms
+- Webhook status sync (published/failed/partial) with automatic drift correction
+- **Campaign Dashboard** — real-time stats with configurable time ranges, pending queue, failed alerts, scheduled heatmap
+- Image optimization (client + server side) with **AI outpainting** for aspect ratio correction
+- Platform-specific auto-crop (square, portrait, landscape, vertical)
+- Vercel Blob permanent image hosting with deduplication
+- Short.io branded link shortening with UTM and per-brand domains
 - LinkedIn PDF carousel assembly
-- lnk.bio integration
-- Failed post retry/delete
-- Single-post immediate publish
-- Multiple source URLs per campaign
-- Unified image catalog with dedup
+- lnk.bio auto-create after Instagram publish
+- Failed post retry/delete with blob and short link cleanup
+- Single-post immediate publish with double-publish guard
+- Post unscheduling (revert scheduled posts to approved)
+- Multiple source URLs per campaign with entity-overlap image filtering
+- Specialized scraping: exhibitions (Artwork Archive embed detection), newsletters (Curated.co), artist profiles (Instagram metadata)
+- Unified image catalog with dimension-aware dedup
 - Image-Text Integrity Rule (no hallucinated artist names)
 - Role-based access with user-brand mapping
+- Per-campaign editorial direction input
+- Feedback logging for post quality improvement
 
 ### Coming Soon
-- Campaign analytics dashboard
 - AI image generation (Orshot carousels)
 - Pre-generation chatbot workflow
 - Deep artist research (Perplexity)
@@ -211,6 +233,7 @@ These are the actual capabilities to market. Keep this list updated as the app e
 - A/B content testing
 - Best-time optimization
 - Platform-aware distribution controls
+- Per-brand lnk.bio configuration (currently hardcoded for The Intersect)
 
 ## Supported Platforms
 Instagram, TikTok, YouTube, LinkedIn, Pinterest, X/Twitter, Facebook, Threads, Bluesky, Snapchat, Google Business, Reddit, Telegram

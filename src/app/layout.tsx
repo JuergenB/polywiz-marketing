@@ -1,20 +1,22 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Inter } from 'next/font/google';
+import { Raleway, Open_Sans } from 'next/font/google';
+import clsx from 'clsx';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { EarlyAccessProvider } from '@/components/ui/EarlyAccessProvider';
 import '@/styles/tailwind.css';
 
-const dmSans = DM_Sans({
+const raleway = Raleway({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-dm-sans',
+  variable: '--font-raleway',
   display: 'swap',
 });
 
-const inter = Inter({
+const openSans = Open_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  variable: '--font-open-sans',
   display: 'swap',
 });
 
@@ -25,30 +27,41 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
-    template: '%s | PolyWiz',
+    template: '%s | PolyWiz by Polymash',
   },
   description:
-    'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 14 platforms.',
+    'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 13 platforms.',
   keywords: [
     'social media management',
     'arts organizations',
     'nonprofit marketing',
     'campaign automation',
     'AI social media',
+    'multi-platform publishing',
   ],
   authors: [{ name: 'Polymash Design' }],
+  icons: {
+    icon: '/logos/Polymash Square Logo 3-400.png',
+    shortcut: '/logos/Polymash Square Logo 3-400.png',
+    apple: '/logos/Polymash Square Logo 3-400.png',
+  },
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: baseUrl,
     siteName: 'PolyWiz by Polymash',
     title: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
     description:
       'Give your art the sustained social media presence it deserves.',
-    images: [{ url: `${baseUrl}/og-image.png`, width: 1200, height: 630 }],
+    images: ['/logos/Polymash Square Logo 3-1200.png'],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'PolyWiz by Polymash',
+    description:
+      'Sustained social media campaigns for arts organizations.',
     creator: '@polymash',
+    images: ['/logos/Polymash Square Logo 3-1200.png'],
   },
 };
 
@@ -60,12 +73,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full scroll-smooth antialiased ${dmSans.variable} ${inter.variable}`}
+      className={clsx(
+        'h-full scroll-smooth antialiased',
+        raleway.variable,
+        openSans.variable,
+      )}
     >
-      <body className="flex h-full flex-col bg-[#FAFAF8] text-[#2D3436]">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="flex h-full flex-col bg-navy-900 text-gray-300">
+        <EarlyAccessProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </EarlyAccessProvider>
       </body>
     </html>
   );

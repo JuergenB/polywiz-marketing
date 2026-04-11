@@ -2,21 +2,29 @@
 
 @theme {
   /* ── Typography ── */
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-display: 'Raleway', system-ui, sans-serif;
+  --font-sans: 'Open Sans', system-ui, sans-serif;
 
-  /* ── PolyWiz Brand Colors ── */
-  --color-primary-50: #fef0ec;
-  --color-primary-100: #fcd9cf;
-  --color-primary-200: #f5b8a8;
-  --color-primary-300: #e8957e;
-  --color-primary-400: #e07a5f;
-  --color-primary-500: #d46a4f;
-  --color-primary-600: #c96a51;
-  --color-primary-700: #b05a44;
-  --color-primary-800: #8c4836;
-  --color-primary-900: #6b3728;
+  /* ── Dark theme base ── */
+  --color-navy-950: #0A141F;
+  --color-navy-900: #0f1d2e;
+  --color-navy-800: #132440;
+  --color-navy-700: #1a3350;
+  --color-navy-600: #1f3d5e;
 
+  /* ── Warm Amber (primary accent) ── */
+  --color-primary-50: #fdf5e6;
+  --color-primary-100: #fae6b8;
+  --color-primary-200: #f5d080;
+  --color-primary-300: #e8b440;
+  --color-primary-400: #cb8a00;
+  --color-primary-500: #b07800;
+  --color-primary-600: #956500;
+  --color-primary-700: #7a5300;
+  --color-primary-800: #5e4000;
+  --color-primary-900: #432e00;
+
+  /* ── Sage Green (secondary) ── */
   --color-secondary-50: #eff7f3;
   --color-secondary-100: #d4eae0;
   --color-secondary-200: #b5dbcb;
@@ -25,25 +33,44 @@
   --color-secondary-500: #6a9a82;
   --color-secondary-600: #5a8670;
   --color-secondary-700: #4a705d;
-  --color-secondary-800: #3a5a4a;
-  --color-secondary-900: #2a4437;
 
+  /* ── Warm Gold (accent) ── */
   --color-accent-50: #fdf6e8;
   --color-accent-100: #f9e8c4;
   --color-accent-200: #f5d9a8;
   --color-accent-300: #f2cc8f;
   --color-accent-400: #e8bc75;
   --color-accent-500: #d4a853;
-  --color-accent-600: #b8903a;
-  --color-accent-700: #9a7830;
-  --color-accent-800: #7c6026;
-  --color-accent-900: #5e481c;
+
+  /* ── Emerald (success states) ── */
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+
+  /* ── Polymash Blue (attribution only) ── */
+  --color-polymash: #0399FE;
 
   /* ── Border Radius ── */
   --radius-4xl: 2rem;
 
   /* ── Container ── */
   --container-7xl: 80rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-navy-950);
+  }
+}
+
+/* ── Scrollbar hide utility ── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* ── Reduced Motion ── */

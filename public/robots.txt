@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Host
+Host: https://polywiz.polymash.com
+
+# Sitemaps
+Sitemap: https://polywiz.polymash.com/sitemap.xml
