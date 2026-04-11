@@ -17,10 +17,10 @@ export function CallToAction() {
           className="mx-auto max-w-lg text-center"
         >
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Ready to give your art sustained visibility?
+            Ready to give your brand sustained visibility?
           </h2>
           <p className="mt-4 text-lg text-gray-400">
-            PolyWiz is currently in private beta with select arts organizations.
+            PolyWiz is currently in private beta with select organizations.
             Get in touch to request early access.
           </p>
           <EarlyAccessButton className="mt-10 inline-flex items-center justify-center rounded-lg bg-primary-400 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-300 active:bg-primary-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400">
