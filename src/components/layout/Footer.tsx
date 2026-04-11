@@ -133,6 +133,12 @@ export function Footer() {
             <SitemapLinks />
           </div>
           <div className="mt-12 flex flex-col items-center border-t border-white/10 pt-8 sm:flex-row-reverse sm:justify-between">
+            <a
+              href="https://app.polywiz.polymash.com"
+              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+            >
+              Log in
+            </a>
             <p className="mt-4 text-sm text-gray-500 sm:mt-0">
               &copy; {currentYear} Polymash Design. All rights reserved.
             </p>
