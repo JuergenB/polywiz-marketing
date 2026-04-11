@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Raleway, Open_Sans } from 'next/font/google';
 import clsx from 'clsx';
 import { Header } from '@/components/layout/Header';
@@ -80,6 +81,17 @@ export default function RootLayout({
       )}
     >
       <body className="flex h-full flex-col bg-navy-900 text-gray-300">
+        {/* UserMaven analytics — cookieless, no consent banner needed */}
+        {process.env.NEXT_PUBLIC_USERMAVEN_KEY && (
+          <Script
+            src="https://t.usermaven.com/lib.js"
+            data-key={process.env.NEXT_PUBLIC_USERMAVEN_KEY}
+            data-tracking-host="https://events.usermaven.com"
+            data-autocapture="true"
+            data-privacy-policy="strict"
+            strategy="afterInteractive"
+          />
+        )}
         <EarlyAccessProvider>
           <Header />
           <main className="flex-1">{children}</main>
