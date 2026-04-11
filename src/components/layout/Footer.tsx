@@ -1,42 +1,102 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { siteConfig } from '@/config/site';
 
-function FooterLinkSection({
-  title,
-  links,
-}: {
-  title: string;
-  links: readonly { label: string; href: string; external?: boolean }[];
-}) {
+function SitemapLinks() {
   return (
-    <div>
-      <h4 className="text-xs font-semibold uppercase tracking-widest text-[#9BA4A8]">
-        {title}
-      </h4>
-      <ul className="mt-4 space-y-3">
-        {links.map((item) => (
-          <li key={item.href}>
-            {'external' in item && item.external ? (
+    <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Product
+        </h4>
+        <ul className="mt-4 space-y-3">
+          {siteConfig.navigation.footer.product.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-sm text-gray-400 transition-colors hover:text-white"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Company
+        </h4>
+        <ul className="mt-4 space-y-3">
+          {siteConfig.navigation.footer.company.map((item) => (
+            <li key={item.href}>
+              {'external' in item && (item as { external: boolean }).external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-400 transition-colors hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="text-sm text-gray-400 transition-colors hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Built For
+        </h4>
+        <ul className="mt-4 space-y-3">
+          {siteConfig.navigation.footer.brands.map((item) => (
+            <li key={item.href}>
               <a
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#DFE6E9] transition-colors hover:text-white"
+                className="text-sm text-gray-400 transition-colors hover:text-white"
               >
                 {item.label}
               </a>
-            ) : (
-              <Link
-                href={item.href}
-                className="text-sm text-[#DFE6E9] transition-colors hover:text-white"
-              >
-                {item.label}
-              </Link>
-            )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+          Social
+        </h4>
+        <ul className="mt-4 space-y-3">
+          <li>
+            <a
+              href={siteConfig.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 transition-colors hover:text-white"
+            >
+              X / Twitter
+            </a>
           </li>
-        ))}
-      </ul>
+          <li>
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 transition-colors hover:text-white"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
@@ -45,52 +105,35 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2D3436]">
+    <footer className="border-t border-white/10 bg-navy-900">
       <Container>
         <div className="py-16">
           <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
             <div className="max-w-sm">
-              <Link href="/" className="flex items-center gap-2.5">
-                <span className="font-display text-lg font-bold text-white">
-                  PolyWiz
+              <Link href="/" className="flex items-center gap-3">
+                <Image
+                  src="/logos/Polymash Square Logo 3-400.png"
+                  alt="Polymash"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 rounded-lg"
+                />
+                <span className="font-display text-base font-semibold text-white">
+                  PolyWiz{' '}
+                  <span className="font-normal text-primary-400">
+                    by Polymash
+                  </span>
                 </span>
               </Link>
-              <p className="mt-4 text-sm text-[#9BA4A8]">
-                {siteConfig.description}
-              </p>
-              <p className="mt-4 text-sm text-[#636E72]">
-                Built by{' '}
-                <a
-                  href="https://polymash.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0399FE] transition-colors hover:text-[#4DC2FF]"
-                >
-                  Polymash
-                </a>
+              <p className="mt-4 text-sm text-gray-400">
+                Sustained social media campaigns for arts organizations,
+                nonprofits, and creative institutions.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-3">
-              <FooterLinkSection title="Product" links={siteConfig.navigation.footer.product} />
-              <FooterLinkSection title="Company" links={siteConfig.navigation.footer.company} />
-              <FooterLinkSection title="Built For" links={siteConfig.navigation.footer.brands} />
-            </div>
+            <SitemapLinks />
           </div>
           <div className="mt-12 flex flex-col items-center border-t border-white/10 pt-8 sm:flex-row-reverse sm:justify-between">
-            <div className="flex gap-6">
-              {Object.entries(siteConfig.social).map(([name, url]) => (
-                <a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm capitalize text-[#9BA4A8] transition-colors hover:text-white"
-                >
-                  {name}
-                </a>
-              ))}
-            </div>
-            <p className="mt-4 text-sm text-[#636E72] sm:mt-0">
+            <p className="mt-4 text-sm text-gray-500 sm:mt-0">
               &copy; {currentYear} Polymash Design. All rights reserved.
             </p>
           </div>
