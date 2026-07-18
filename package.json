@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3111",
-    "build": "next build",
+    "build": "node scripts/check-env.mjs && next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
