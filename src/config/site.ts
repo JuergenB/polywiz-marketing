@@ -31,7 +31,10 @@ export const siteConfig = {
       ],
       legal: [
         { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
+        // "Beta Agreement", not "Terms of Service" — that is the document's
+        // actual title. Calling it ToS while the product is in private beta
+        // would misdescribe what a visitor is about to read.
+        { label: 'Beta Agreement', href: '/terms' },
       ],
     },
   },

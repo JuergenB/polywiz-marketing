@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://polywiz.polymash.com</loc><lastmod>2026-04-11T16:39:46.638Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
-<url><loc>https://polywiz.polymash.com/features</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/ai-post-generator</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/approval-queue</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/brand-manager</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/campaign-dashboard</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/campaign-planner</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/cover-slide-designer</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/image-optimizer</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/link-shortener</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/multi-platform-publisher</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/quick-post</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/smart-scheduler</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-<url><loc>https://polywiz.polymash.com/features/tone-voice-system</loc><lastmod>2026-04-11T16:39:46.639Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+<url><loc>https://polywiz.polymash.com/features</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/ai-post-generator</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/approval-queue</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/brand-manager</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/campaign-dashboard</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/campaign-planner</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/cover-slide-designer</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/image-optimizer</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/link-shortener</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/multi-platform-publisher</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/quick-post</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/smart-scheduler</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/features/tone-voice-system</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/privacy</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://polywiz.polymash.com/terms</loc><lastmod>2026-07-25T22:02:34.594Z</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

@@ -132,14 +132,25 @@ export function Footer() {
             </div>
             <SitemapLinks />
           </div>
-          <div className="mt-12 flex flex-col items-center border-t border-white/10 pt-8 sm:flex-row-reverse sm:justify-between">
-            <a
-              href="https://app.polywiz.polymash.com"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
-            >
-              Log in
-            </a>
-            <p className="mt-4 text-sm text-gray-500 sm:mt-0">
+          <div className="mt-12 flex flex-col items-center gap-4 border-t border-white/10 pt-8 sm:flex-row-reverse sm:justify-between sm:gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {siteConfig.navigation.footer.legal.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <a
+                href="https://app.polywiz.polymash.com"
+                className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+              >
+                Log in
+              </a>
+            </div>
+            <p className="text-sm text-gray-500">
               &copy; {currentYear} Polymash Design. All rights reserved.
             </p>
           </div>

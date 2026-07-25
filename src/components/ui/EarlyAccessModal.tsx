@@ -248,6 +248,27 @@ export function EarlyAccessModal({ open, onClose }: EarlyAccessModalProps) {
                     >
                       {status === 'sending' ? 'Sending...' : 'Request Early Access'}
                     </button>
+
+                    {/*
+                      Notice at the point of collection. This is where personal
+                      data is actually handed over, so the policy has to be
+                      reachable here — a footer link alone isn't notice.
+                      Deliberately NOT a consent checkbox: this form requests
+                      access, it doesn't form the agreement. Acceptance is the
+                      clickwrap at registration (#409).
+                    */}
+                    <p className="text-center text-xs text-gray-500">
+                      We use your details only to review your request. See our{' '}
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-300"
+                      >
+                        Privacy Policy
+                      </a>
+                      .
+                    </p>
                   </form>
                 </>
               )}
