@@ -38,3 +38,6 @@ next-env.d.ts
 # dev artifacts
 /screenshots-verify/
 /test-results/
+
+# Claude Code local workspace (audits, scratch notes) — not part of the site
+.claude/
