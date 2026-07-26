@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+import { recordBetaApplication } from '@/lib/beta-applications';
+
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
@@ -54,8 +56,55 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
   }
 
+  // ── Persist FIRST (#399) ────────────────────────────────────────────────────
+  // This route used to send two emails and return. An inbox is not a datastore:
+  // when RESEND_API_KEY went missing in production the form 500'd and every lead
+  // submitted in that window was gone with no record anywhere (marketing #2).
+  //
+  // Writing the row before the sends makes the two channels independent — a mail
+  // failure can no longer lose a lead, and an Airtable failure still leaves the
+  // notification email as a backstop. Neither single failure is lossy.
+  const persisted = await recordBetaApplication({
+    name,
+    email,
+    organization,
+    role,
+    message,
+    source: 'marketing-form',
+  });
+
+  switch (persisted.outcome) {
+    case 'created':
+      console.log(`[early-access] application recorded: ${persisted.id}`);
+      break;
+    case 'duplicate':
+      // Never surfaced to the applicant — see recordBetaApplication.
+      console.log(
+        `[early-access] duplicate application for ${email}; existing row ${persisted.id}, not creating another`,
+      );
+      break;
+    case 'skipped':
+      console.warn(`[early-access] NOT persisted — ${persisted.reason}`);
+      break;
+    case 'failed':
+      console.error('[early-access] Airtable write failed:', persisted.error);
+      break;
+  }
+
+  const wasCaptured =
+    persisted.outcome === 'created' || persisted.outcome === 'duplicate';
+
   if (!resend) {
     console.error('[early-access] Resend not configured — RESEND_API_KEY missing');
+    // The row exists, so the lead is not lost — but nobody has been notified.
+    // Telling the applicant to try again would be untrue and would invite a
+    // duplicate submission for a request we already hold.
+    if (wasCaptured) {
+      return NextResponse.json({
+        success: true,
+        message: "Thanks! We'll be in touch soon.",
+      });
+    }
     return NextResponse.json(
       { error: 'Email service not configured' },
       { status: 500 },
@@ -102,6 +151,15 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('[early-access] Email send failed:', error);
+    // If the row was written, the lead is captured and visible on the app's
+    // Beta Applications review screen. Reporting failure here would be false,
+    // and would push the applicant into re-submitting a request we already have.
+    if (wasCaptured) {
+      return NextResponse.json({
+        success: true,
+        message: "Thanks! We'll be in touch soon.",
+      });
+    }
     return NextResponse.json(
       { error: 'Failed to send request. Please try again.' },
       { status: 500 },

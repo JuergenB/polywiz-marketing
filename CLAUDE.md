@@ -181,11 +181,56 @@ The following global skills are relevant to this project. They are loaded automa
 | `replicate-api` | `~/.claude/skills/replicate-api/SKILL.md` | AI image generation via Replicate (Flux Schnell/Dev). Use for generating marketing visuals, hero images, or decorative assets. |
 | `short-io-api` | `~/.claude/skills/short-io-api/SKILL.md` | Short.io link shortening with UTM tracking. Use for any trackable links in marketing CTAs or campaigns. |
 | `napkin-ai` | `~/.claude/skills/napkin-ai/SKILL.md` | Napkin AI infographic/diagram generation. Use for creating explanatory visuals, process diagrams, or feature illustrations for the site. |
+| `usermaven` | `~/.claude/skills/usermaven/SKILL.md` | Privacy-first analytics. Installed on this site with cookieless tracking and conversion funnel events (`early_access_clicked`, `early_access_submitted`). |
 
 ## Environment Variables
 ```
 NEXT_PUBLIC_SITE_URL=https://polywiz.polymash.com
+NEXT_PUBLIC_USERMAVEN_KEY=UMaifjc5SZ  # Cookieless analytics tracking
+RESEND_API_KEY=...                    # Early-access notification emails
+POLYWIZ_APP_URL=https://app.polywiz.polymash.com
+BETA_INTAKE_SECRET=...                # Shared secret; must match polywiz-app
 ```
+`scripts/check-env.mjs` runs before `next build` and hard-fails a **production**
+build when any of `RESEND_API_KEY` / `POLYWIZ_APP_URL` / `BETA_INTAKE_SECRET` is
+missing. Preview and local builds only warn.
+
+## Early-access form → Beta Applications (#399)
+
+`POST /api/early-access` **writes the Airtable row before it sends any email.**
+That ordering is the requirement, not an implementation detail: this form
+previously sent two Resend emails and persisted nothing, so when `RESEND_API_KEY`
+went missing in production (marketing #2) every lead submitted in that window was
+lost with no record anywhere. Persistence and email are now two independent
+capture channels — losing either one does not lose the lead.
+
+- ⚠️ **This site holds no Airtable credential.** `src/lib/beta-applications.ts`
+  POSTs to the app's secret-gated `POST /api/webhooks/beta-intake`, which owns the
+  write. Giving marketing its own PAT was rejected: the only PAT available is
+  scoped to the owner's user account and holds `create` on **four** bases,
+  including the PolyWiz base's `Users` table (bcrypt password hashes) and
+  `Beta Applications` (live invite tokens that mint accounts). Airtable also has
+  no API for creating tokens, so even a table-scoped replacement would have to be
+  rotated through a browser — `BETA_INTAKE_SECRET` rotates from a terminal
+  (`openssl rand -hex 32`, then update both Vercel projects).
+- The app writes `Source: "marketing-form"`, `Status: "New"` to `Beta Applications`
+  (`tbld0Mac1MEJJrg2x`). Its review screen at `/dashboard/tools/beta-applications`
+  picks it up with no further wiring.
+- **A duplicate email is never surfaced to the applicant.** `recordBetaApplication`
+  returns `duplicate`, the route logs it and returns success. Telling someone
+  "you already applied" leaks which emails are on file and reads as a rejection.
+- **A mail failure after a successful write returns success**, not 500. The lead
+  is captured and visible in the app; reporting failure would be untrue and would
+  push the applicant into re-submitting a request we already hold.
+- **An Airtable failure does not 500 either** — the notification emails still go
+  out, so the lead still reaches the inbox. Logged loudly as `[early-access]`.
+- ⚠️ **`AIRTABLE_BETA_PAT` must be a separate, table-scoped token** —
+  `data.records:read` + `data.records:write`, scoped to the `Beta Applications`
+  table alone. Never copy the app's `AIRTABLE_API_KEY` here: it can read the
+  `Users` table (bcrypt password hashes, live invite tokens) and this is a public
+  marketing deploy.
+- Schema is owned by the app repo. `polywiz-app/CLAUDE.md` is canonical; keep the
+  field names in `src/lib/airtable/beta-applications.ts` in sync with it.
 
 ## PolyWiz Feature Inventory (from app repo)
 These are the actual capabilities to market. Keep this list updated as the app evolves.

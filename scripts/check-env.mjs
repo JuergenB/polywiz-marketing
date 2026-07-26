@@ -10,7 +10,14 @@
 //   RECOMMENDED — has a fallback; missing = degraded but working. Warn only.
 // Optional vars (feature simply turns off, e.g. NEXT_PUBLIC_USERMAVEN_KEY) are not listed.
 
-const REQUIRED = ['RESEND_API_KEY'];
+// The intake vars are REQUIRED rather than RECOMMENDED on purpose. The
+// early-access route does degrade without them (the notification emails still
+// go out), so by the letter of the tiers above they'd be RECOMMENDED. But
+// persistence is the entire point of #399 — a deploy that silently stops
+// recording applications is exactly the failure this guard was built for after
+// RESEND_API_KEY went missing in production and leads vanished. Blocking the
+// build forces the setup instead of burying it in a warning nobody reads.
+const REQUIRED = ['RESEND_API_KEY', 'POLYWIZ_APP_URL', 'BETA_INTAKE_SECRET'];
 const RECOMMENDED = ['NEXT_PUBLIC_SITE_URL'];
 
 // Vercel sets VERCEL_ENV to 'production' | 'preview' | 'development'.
