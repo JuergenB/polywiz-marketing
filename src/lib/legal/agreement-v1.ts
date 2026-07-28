@@ -5,7 +5,7 @@
 //
 // The app and the marketing site must never show different legal text.
 //
-// sha256(text) = dc3f99877ec88a80f31c20a16242a35e974178b807619c6e6045c65e982aa1f1
+// sha256(text) = ad0c909bccc29e23d1d0660e53deffddeba61eb08e684acf7b7a40e75ad8eac7
 
 /**
  * PolyWiz Beta Agreement — canonical text rendered at /terms.
@@ -63,6 +63,8 @@ We won't do any of that arbitrarily, and where possible we'll give you notice.
 Please don't build anything mission-critical on it yet. Keep your own copies of anything you'd hate to lose.
 
 **Your beta credits.** Using PolyWiz draws down a balance of credits. **Creating a campaign and generating posts consume credits** — that's where the work happens. Scheduling and publishing what you've already generated don't, and neither does adding users to your brand. For the beta we've **gifted you a specific block of them, free of charge**, so you can genuinely put the product through its paces instead of rationing yourself against a meter. Your usage is metered, and we'll show you your consumption and remaining balance in the product.
+
+**Credits may be shared.** If you have more than one brand with us — or you're part of an organization that does — your credits may sit in a single shared balance that all of those brands draw from. That means the balance you see can go down because of activity on a brand other than your own. We'll always show you which brands share a balance, and what your own brand has used.
 
 Since it's a gift and not a purchase, the edges matter:
 
