@@ -112,11 +112,11 @@ export function Footer() {
             <div className="max-w-sm">
               <Link href="/" className="flex items-center gap-3">
                 <Image
-                  src="/logos/Polymash Square Logo 3-400.png"
-                  alt="Polymash"
+                  src="/logos/polywiz-mark-192.png"
+                  alt="PolyWiz"
                   width={32}
                   height={32}
-                  className="h-8 w-8 rounded-lg"
+                  className="h-8 w-8"
                 />
                 <span className="font-display text-base font-semibold text-white">
                   PolyWiz{' '}

@@ -42,9 +42,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Polymash Design' }],
   icons: {
-    icon: '/logos/Polymash Square Logo 3-400.png',
-    shortcut: '/logos/Polymash Square Logo 3-400.png',
-    apple: '/logos/Polymash Square Logo 3-400.png',
+    icon: [
+      { url: '/logos/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logos/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/logos/favicon-32x32.png',
+    apple: [{ url: '/logos/apple-touch-icon.png', sizes: '180x180' }],
   },
   openGraph: {
     type: 'website',
@@ -54,7 +57,14 @@ export const metadata: Metadata = {
     title: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
     description:
       'Give your art the sustained social media presence it deserves.',
-    images: ['/logos/Polymash Square Logo 3-1200.png'],
+    images: [
+      {
+        url: '/logos/polywiz-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'PolyWiz by Polymash — sustained social media campaigns for arts organizations',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -62,7 +72,7 @@ export const metadata: Metadata = {
     description:
       'Sustained social media campaigns for arts organizations.',
     creator: '@polymash',
-    images: ['/logos/Polymash Square Logo 3-1200.png'],
+    images: ['/logos/polywiz-og.png'],
   },
 };
 

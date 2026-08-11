@@ -121,11 +121,11 @@ export function Header() {
           <div className="flex items-center md:gap-x-12">
             <Link href="/" aria-label="Home" className="flex items-center gap-3">
               <Image
-                src="/logos/Polymash Square Logo 3-400.png"
-                alt="Polymash"
+                src="/logos/polywiz-mark-192.png"
+                alt="PolyWiz"
                 width={36}
                 height={36}
-                className="h-9 w-9 rounded-lg"
+                className="h-9 w-9"
                 priority
               />
               <span className="font-display text-lg font-semibold text-white">
