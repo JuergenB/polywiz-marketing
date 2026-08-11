@@ -41,3 +41,6 @@ next-env.d.ts
 
 # Claude Code local workspace (audits, scratch notes) — not part of the site
 .claude/
+
+# Session handover notes — in-tree so they are clickable, never committed.
+handovers/
