@@ -7,7 +7,7 @@ export const seoConfig = {
     siteName: 'PolyWiz by Polymash',
     tagline: 'Sustained social media campaigns for arts organizations',
     description:
-      'PolyWiz generates and schedules weeks of platform-specific social media posts for arts organizations, nonprofits, and creative institutions — with human approval before anything goes live.',
+      'PolyWiz generates and schedules weeks of platform-specific social media posts for arts organizations, nonprofits, and creative institutions - with human approval before anything goes live.',
     url: baseUrl,
     twitterHandle: '@polymash',
     defaultOgImage: `${baseUrl}/og-image.png`,
@@ -15,15 +15,15 @@ export const seoConfig = {
 
   pages: {
     home: {
-      title: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
+      title: 'PolyWiz - Sustained Social Media Campaigns for Arts Organizations',
       description:
-        'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 13 platforms — with human approval before anything goes live.',
+        'Give your art the sustained social media presence it deserves. PolyWiz generates and schedules weeks of platform-specific posts across 13 platforms - with human approval before anything goes live.',
       keywords: [
         'social media management',
         'arts organizations',
         'nonprofit marketing',
         'campaign automation',
-        'AI social media',
+        'social media scheduling',
         'exhibition marketing',
         'arts marketing tools',
         'multi-platform publishing',

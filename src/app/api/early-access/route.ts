@@ -139,9 +139,9 @@ export async function POST(request: NextRequest) {
       html: `
         <h2>Thanks for your interest in PolyWiz, ${name.split(' ')[0]}!</h2>
         <p>We received your early access request for <strong>${organization}</strong> and will follow up shortly to schedule a conversation.</p>
-        <p>PolyWiz gives arts organizations, nonprofits, and publishers sustained social media presence across 13 platforms — with AI-generated, platform-specific posts and human approval before anything goes live.</p>
+        <p>PolyWiz gives arts organizations, nonprofits, and publishers sustained social media presence across 13 platforms, with platform-specific posts and human approval before anything goes live.</p>
         <p>In the meantime, if you have questions, reply to this email or reach out at <a href="mailto:support@polymash.com">support@polymash.com</a>.</p>
-        <p style="color:#999;font-size:13px;">— The Polymash Team</p>
+        <p style="color:#999;font-size:13px;">The Polymash Team</p>
       `,
     });
 

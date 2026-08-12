@@ -69,7 +69,7 @@ function ScreenshotCarousel({
           >
             <Image
               src={screenshots[activeIndex].src}
-              alt={screenshots[activeIndex].caption || `${alt} — view ${activeIndex + 1}`}
+              alt={screenshots[activeIndex].caption || `${alt} - view ${activeIndex + 1}`}
               fill
               className="object-contain"
             />

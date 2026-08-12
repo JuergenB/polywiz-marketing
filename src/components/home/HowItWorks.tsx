@@ -5,12 +5,12 @@ import { HorizontalTimeline } from '@/components/ui/HorizontalTimeline';
 
 const steps = [
   {
-    title: 'Drop in a URL',
-    description: 'Paste your exhibition page, newsletter, or event. PolyWiz scrapes the content and images automatically.',
+    title: 'Start from what you have',
+    description: 'A link to a page, a PDF you upload, or a link to a PDF on your own site. Add your own photographs, and they go into the campaign too.',
   },
   {
-    title: 'AI generates the posts',
-    description: 'Platform-specific drafts shaped by your 8-dimension brand voice — plus cover slides for carousels.',
+    title: 'The posts get written',
+    description: 'Platform-specific drafts shaped by your 8-dimension brand voice, plus cover slides for carousels.',
   },
   {
     title: 'Smart scheduling',
@@ -22,7 +22,11 @@ const steps = [
   },
   {
     title: 'Publish everywhere',
-    description: 'One click publishes to 13 platforms with automatic status sync and branded short links.',
+    description: 'One click publishes to 13 platforms, with branded short links and the real reason if anything fails.',
+  },
+  {
+    title: 'See what worked',
+    description: 'Impressions, engagement and follower growth come back in, so the next campaign starts better informed than the last.',
   },
 ];
 
@@ -36,11 +40,12 @@ export function HowItWorks() {
               Process
             </p>
             <h2 className="mt-2 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              From URL to Published Campaign in Five Steps
+              From What You Have to What Worked, in Six Steps
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
-              Drop in a link, and PolyWiz does the rest — generating, scheduling, and
-              publishing posts across every platform your audience uses.
+              Bring a link, a PDF, or the photographs on your hard drive. PolyWiz
+              generates, schedules and publishes across every platform your audience
+              uses, then tells you what landed.
             </p>
           </div>
 

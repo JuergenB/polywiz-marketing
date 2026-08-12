@@ -27,7 +27,7 @@ const baseUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
+    default: 'PolyWiz - Sustained Social Media Campaigns for Arts Organizations',
     template: '%s | PolyWiz by Polymash',
   },
   description:
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     'arts organizations',
     'nonprofit marketing',
     'campaign automation',
-    'AI social media',
+    'social media scheduling',
     'multi-platform publishing',
   ],
   authors: [{ name: 'Polymash Design' }],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: baseUrl,
     siteName: 'PolyWiz by Polymash',
-    title: 'PolyWiz — Sustained Social Media Campaigns for Arts Organizations',
+    title: 'PolyWiz - Sustained Social Media Campaigns for Arts Organizations',
     description:
       'Give your art the sustained social media presence it deserves.',
     images: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: '/logos/polywiz-og.png',
         width: 1200,
         height: 630,
-        alt: 'PolyWiz by Polymash — sustained social media campaigns for arts organizations',
+        alt: 'PolyWiz by Polymash - sustained social media campaigns for arts organizations',
       },
     ],
   },
@@ -91,7 +91,7 @@ export default function RootLayout({
       )}
     >
       <body className="flex h-full flex-col bg-navy-900 text-gray-300">
-        {/* UserMaven analytics — cookieless, no consent banner needed */}
+        {/* UserMaven analytics - cookieless, no consent banner needed */}
         {process.env.NEXT_PUBLIC_USERMAVEN_KEY && (
           <Script
             src="https://t.usermaven.com/lib.js"

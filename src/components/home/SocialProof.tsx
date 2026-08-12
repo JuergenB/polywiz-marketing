@@ -5,9 +5,12 @@ import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { siteConfig } from '@/config/site';
 
+// Only campaign types a user can actually select. Selectability is driven by
+// Airtable Status, not by a constant in the app repo, so this list can go stale
+// with no commit anywhere. Deliberately no count is published alongside it.
 const campaignTypes = [
-  'Exhibitions', 'Newsletters', 'Podcasts', 'Events', 'Open Calls',
-  'Artist Profiles', 'Blog Posts', 'Public Art', 'Video & Film', 'Institutional', 'Custom',
+  'Exhibitions', 'Newsletters', 'Podcasts', 'Events', 'Event Listings',
+  'Open Calls', 'Artist Profiles', 'Blog Posts', 'Press Releases',
 ];
 
 const brands = [
@@ -55,23 +58,24 @@ export function SocialProof() {
               About PolyWiz
             </p>
             <h2 className="mt-2 font-display text-3xl tracking-tight text-white sm:text-4xl">
-              The marketing capacity of a full social media team — without the headcount
+              The marketing capacity of a full social media team - without the headcount
             </h2>
           </div>
 
           <div className="mt-10 space-y-6 text-base/7 text-gray-300">
             <p>
-              Most organizations produce great content — exhibitions, newsletters, podcast
-              episodes, events, campaigns — but promoting it across social media is a grind.
+              Most organizations produce great content - exhibitions, newsletters, podcast
+              episodes, events, campaigns - but promoting it across social media is a grind.
               One post on launch day. Maybe a reminder the week after. Then silence, while
               your team moves on to the next thing.
             </p>
             <p>
-              PolyWiz changes that equation. Drop in a URL and it scrapes your content,
-              generates platform-specific posts tuned to your brand voice, schedules them
-              over weeks and months with intelligent tapering, and publishes across{' '}
-              {siteConfig.platforms.length} platforms. What used to require a dedicated
-              social media team now runs alongside your existing workflow.
+              PolyWiz changes that equation. Give it a link, a PDF, or the photographs
+              you already have, and it generates platform-specific posts tuned to your
+              brand voice, schedules them over weeks and months with intelligent tapering,
+              publishes across {siteConfig.platforms.length} platforms, and reports what
+              each one earned. What used to require a dedicated social media team now runs
+              alongside your existing workflow.
             </p>
           </div>
 
@@ -98,7 +102,7 @@ export function SocialProof() {
               </div>
               <blockquote className="border-l-2 border-primary-400/60 pl-8">
                 <p className="font-display text-xl/8 font-medium tracking-tight text-white sm:text-2xl/9">
-                  PolyWiz doesn&apos;t replace your marketing team — it frees them
+                  PolyWiz doesn&apos;t replace your marketing team - it frees them
                   from the content production grind so they can focus on engagement,
                   community building, and creative strategy.
                 </p>
@@ -169,7 +173,7 @@ export function SocialProof() {
           <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
         </div>
 
-        {/* Social proof — trust signals */}
+        {/* Social proof - trust signals */}
         <div className="mt-20">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary-400/90">
@@ -214,7 +218,7 @@ export function SocialProof() {
             className="mx-auto mt-14 max-w-3xl"
           >
             <p className="mb-4 text-center text-sm font-semibold text-white">
-              11 campaign types and counting
+              Campaign types, with more added over time
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {campaignTypes.map((type) => (
@@ -281,9 +285,9 @@ export function SocialProof() {
             >
               Visibility Labs
             </a>
-            {' '}to solve AI search discovery, and PolyWiz to solve sustained
+            {' '}to solve search visibility, and PolyWiz to solve sustained
             social media presence. Same philosophy across both: focus on
-            creating great content — we automate everything else.
+            creating great content - we automate everything else.
           </p>
         </motion.div>
       </Container>

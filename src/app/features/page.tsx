@@ -7,7 +7,7 @@ import { FeatureGrid } from '@/components/features/FeatureGrid';
 export const metadata: Metadata = {
   title: 'Features',
   description:
-    'Everything your team needs for sustained social media promotion — from AI content generation to multi-platform publishing across 13 platforms.',
+    'Everything your team needs for sustained social media promotion from content generation to multi-platform publishing across 13 platforms.',
 };
 
 export default function FeaturesPage() {

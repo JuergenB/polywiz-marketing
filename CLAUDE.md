@@ -7,7 +7,11 @@
 - **Companion app repo:** https://github.com/JuergenB/polywiz-app (local: `/Users/juergenberkessel/Projects/polywiz-app`)
 
 ## What Is PolyWiz?
-PolyWiz is a campaign planning tool that gives **arts organizations, 501(c)(3) nonprofits, newsletter publishers, and creative institutions** sustained social media presence across 13 platforms. Instead of a single opening-night post, PolyWiz generates and schedules dozens of platform-specific posts over weeks and months — with human approval before anything goes live.
+PolyWiz is a campaign planning tool that gives **arts organizations, 501(c)(3) nonprofits, newsletter publishers, and creative institutions** sustained social media presence across 13 platforms. Instead of a single opening-night post, PolyWiz generates and schedules platform-specific posts over weeks and months — with human approval before anything goes live.
+
+A campaign can start from **a URL, an uploaded PDF, or a link to a PDF on your own site**, and every campaign carries its own image pool (uploaded, imported, or scraped).
+
+⛔ **Never state a post count in site copy** (owner decision, 2026-08-12). The app deliberately stopped predicting one: a rich source yields more posts than a thin one, and max-variants is a ceiling rather than a target (polywiz-app `8977d52`, `3ea5aaa`, [#468](https://github.com/JuergenB/polywiz-app/issues/468)).
 
 **Built by Polymash for Arterial and its brands:** Not Real Art, Artsville USA, Sugar Press Art, The Intersect.
 
@@ -116,7 +120,7 @@ Present PolyWiz's capabilities as benefit-focused cards/sections:
 
 | Feature | Benefit Headline | Key Message |
 |---------|-----------------|-------------|
-| Campaign Planner | Drop in a URL, get a campaign | Paste your exhibition page, newsletter, or event — PolyWiz scrapes the content and builds a multi-week campaign |
+| Campaign Planner | Start with what you already have | A link, an uploaded PDF, or a link to a PDF on your own site. Any of the three becomes a multi-week campaign |
 | AI Post Generator | Platform-perfect drafts in seconds | Claude generates posts tuned for each platform's voice, length, and audience — from LinkedIn articles to Instagram captions |
 | Tone & Voice System | Eight dimensions of brand voice control | Fine-tune Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, and Intimacy per brand |
 | Smart Scheduler | Months of promotion, not just opening night | Tapering algorithm distributes posts over weeks/months with per-brand cadence |
@@ -125,16 +129,77 @@ Present PolyWiz's capabilities as benefit-focused cards/sections:
 | Approval Queue | Nothing goes live without your say | Every post is a draft — review, edit, browse campaign images, approve individually or in bulk |
 | Multi-Platform Publisher | 13 platforms, one dashboard | Instagram, LinkedIn, X, Threads, Bluesky, TikTok, Facebook, Pinterest, YouTube, and more |
 | Brand Manager | One tool, all your brands | Switch between organizations with distinct voice dimensions, cadence, and connected accounts |
-| Image Optimizer | Gallery-ready visuals, platform-optimized | Auto-crop, compress, AI outpaint, and optimize images to fit each platform's requirements |
-| Link Shortener | Branded links with tracking built in | Short.io integration with per-brand domains and UTM parameters |
-| Campaign Dashboard | Real-time stats across all campaigns | Configurable time ranges, pending queue, scheduled heatmap, failed alerts |
+| Campaign Images | Your images, ready for every platform | Upload your own or import from another page. One pool with visible provenance, captions that survive regeneration, images spread across the campaign, sized per platform |
+| Results & Reporting | Know what landed | Impressions, engagement, clicks and follower growth, next to what shipped and what failed. Branded short links are supporting detail inside it, never a headline |
+
+⚠️ The registry is **11 entries** and the count must not grow (#5, #6). `Image Optimizer` became
+`Campaign Images`; `Link Shortener` + `Campaign Dashboard` merged into `Results & Reporting`.
+Retired slugs 308-redirect in `next.config.js`.
+
+⛔ **No internal machinery or vendor names in site copy** (owner decision, 2026-08-12): no post
+validators, no Firecrawl / Zernio / Replicate / Vercel Blob / Short.io / lnk.bio, no internal rule
+names. Benefit and outcome only.
+
+## Upscaling screenshots — works, but has a hard limit
+
+`scripts/upscale-images.mjs <file...>` runs Replicate's `recraft-ai/recraft-crisp-upscale`
+(4x, capped with `--max`, originals kept as `<file>.orig`). Chosen over Real-ESRGAN and
+clarity-upscaler because those invent detail, and invented detail in a screenshot means
+publishing words the app never displayed.
+
+⚠️ **It still invents glyphs below a certain text size. Verified 2026-08-12, both directions:**
+
+| Source | Result |
+|---|---|
+| Campaign type picker, 686x355, tile labels | ✅ **Clean at 2000px.** "Event", "Events List", "Open Call", "Press Release", "Video/Film", "Custom" all correct and sharp |
+| Cover slide templates, 497x364, standfirst body copy | ⛔ **Mangled.** "get neutral" → "gxt nxutral", "Film" → "Rlm", "theory" → "thoory", "voice collide" → "volca collido", "Issue" → "[ssue", `@theintersectnews` → `@thointorsoctnows`. **Reverted.** |
+
+**The rule: headline-sized text survives, body text does not.** Always crop the result at 1:1
+and read the actual words before shipping. "It upscaled" is not "the text is still right."
+When small copy is involved the only correct fix is a **re-capture at 2x**, not an upscale.
+
+## ⛔ CRITICAL: No mention of AI anywhere on the site
+
+**Owner decision, 2026-08-12:** *"I want to remove all mention of AI. The audience is very anti-AI...
+let's not proudly announce AI anything on the home page."*
+
+This audience is arts organizations and nonprofits, where "AI" is a **liability, not a selling point**.
+The product's actual selling point is the opposite one, and it is already true: **nothing publishes
+without a human approving it.** Lead with that.
+
+**Banned in all shipped copy, metadata, keywords, alt text, captions, image filenames and email:**
+`AI`, `AI-powered`, `AI-generated`, `artificial intelligence`, `Claude`, `hallucinate`/`hallucinated`,
+and any vendor model name.
+
+**Say instead:** "posts are written for each platform", "drafts", "PolyWiz writes the first draft",
+"have the headline drafted for you". Never "AI writes your posts".
+
+| Was | Now |
+|---|---|
+| `ai-post-generator` / "AI Post Generator" | `post-generator` / **"Post Generator"** (old slug 308-redirects) |
+| homepageLabel "AI-Powered" | "Drafting" |
+| "Every AI-generated post is a draft" | "Every post is a draft" |
+| "let AI write the headline" | "have the headline drafted for you" |
+| "Image-Text Integrity Rule prevents hallucinated artist names" | "Never invents an artist name for a picture it was given" |
+| keyword "AI social media" | "social media scheduling" |
+
+⚠️ **Check images, not just text.** `ai-generation-system-four-pillars.png` was a generated diagram
+whose own title read **"AI Post Generation System"**; it was deleted. `ai-outpainting-aspect-ratio.png`
+was renamed to `image-edges-extended-to-fit.png`. **A screenshot or diagram that says AI defeats the
+rule just as thoroughly as a sentence does.**
+
+⚠️ One deliberate edit beyond PolyWiz: the founder quote described the sister product Visibility Labs
+as solving *"AI search discovery"*, now **"search visibility"**. Accurate and on-brand, but it is a
+description of another product - revert that phrase alone if you want it back.
 
 ### Opportunity Statement
 Frame around the pain point:
+- Their source material is often not a web page at all: a PDF brochure, a press release, photographs on a hard drive
 - Arts organizations promote exhibitions, events, newsletters, and artist features
 - Most get a single social post on launch day, then silence
-- Sustained promotion requires dozens of platform-specific posts over months
+- Sustained promotion means platform-specific posts over months, not one announcement
 - Small teams can't manually create and schedule all that content
+- They publish into the void and never learn what landed, so nothing informs the next campaign
 - **PolyWiz handles the repetitive work so teams focus on what to promote and what resonates**
 
 ### Social Proof / Trust Signals
@@ -238,7 +303,9 @@ These are the actual capabilities to market. Keep this list updated as the app e
 ### Live
 - Campaign creation from URL (Firecrawl scraping with smart image filtering)
 - AI post generation (Claude Sonnet 4.6, brand-aware, dynamic rules per campaign type)
-- 11 campaign types (Newsletter, Exhibition, Artist Profile, Podcast, Event, Open Call, Blog, Public Art, Video/Film, Institutional, Custom)
+- Campaign types: Newsletter, Blog Post, Exhibition, Artist Profile, Podcast Episode, Event, Events List, Open Call, Press Release (Public Art, Video/Film and Custom are defined but not selectable)
+  - ⛔ **Never publish a campaign-type count** (owner decision, 2026-08-12). Selectability is driven by **Airtable `Status = Active`**, not a code constant (polywiz-app `campaigns/new/page.tsx:267-274`), so any number goes stale with no commit anywhere. `ENABLED_CAMPAIGN_TYPES` is only a loading fallback and is already out of date. Name the kinds, never the count.
+  - `Institutional` was replaced by `Press Release` in polywiz-app `3a5624b` ([#471](https://github.com/JuergenB/polywiz-app/issues/471)), which works from a URL **or** an uploaded PDF.
 - **Quick Post** — standalone single-post creation without campaign context
 - **8-dimension Tone & Voice system** (Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, Intimacy) with master intensity slider and per-brand defaults
 - **Cover Slide Designer** — template-driven editorial covers for carousel posts with band-based layout, eyedropper colors, font sizing, AI headlines

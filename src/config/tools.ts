@@ -97,87 +97,87 @@ export const FEATURES: FeatureDefinition[] = [
     iconColorClass: 'text-primary-400',
     homepageLabel: 'Core Feature',
     title: 'Campaign Planner',
-    benefitHeadline: 'Drop in a URL, get a campaign',
+    benefitHeadline: 'Start with what you already have',
     description:
-      'Paste your exhibition page, newsletter, or event — PolyWiz scrapes the content and builds a multi-week campaign across all your platforms.',
+      'A link to your exhibition page. The press release sitting on your desktop as a PDF. A season brochure hosted on your own site. Any of the three becomes a multi-week campaign across your platforms.',
     images: [
-      { src: '/images/features/campaign-workflow-four-steps.png', caption: 'Four-step workflow from URL paste to scheduled distribution' },
-      { src: '/images/features/campaign-types-grid-dark.png', caption: '11 color-coded campaign types from Newsletter to Custom' },
-      { src: '/images/features/duration-distribution-schedule-profile.png', caption: 'Duration and distribution settings with tapering frequency preview' },
+      { src: '/images/features/three-ways-in-url-pdf-quick-post.png', caption: 'Three ways in, all converging on platform-specific posts: pasting a URL, uploading a PDF, or writing a quick post' },
       { src: '/images/features/generation-options-platform-toggles.png', caption: 'Platform toggles, variant count, and tone of voice controls' },
+      { src: '/images/features/duration-distribution-schedule-profile.png', caption: 'Duration and distribution settings with tapering frequency preview' },
+      { src: '/images/features/campaign-type-picker-dark.jpg', caption: 'Campaign type picker asking what you are promoting, with tiles for newsletters, blog posts, exhibitions, artist profiles, podcast episodes, events, event listings, open calls and press releases' },
     ],
     cta: 'See Campaign Planner',
     detailPageTitle: 'Campaign Planner',
     detailPageDescription:
-      'Paste any URL — an exhibition page, newsletter, blog post, or event listing — and PolyWiz scrapes the content, extracts images, and builds a multi-week social media campaign automatically.',
+      'Start a campaign from a web page, a PDF you upload, or a link to a PDF on your own site. PolyWiz reads the material and builds weeks of platform-specific social content from it.',
     opportunityStatement: {
       paragraph1:
-        'Arts organizations promote exhibitions, events, newsletters, and artist features across a dozen platforms. Most get <strong>a single social post on launch day, then silence</strong>.',
+        'Your material is not always a tidy web page. The season brochure is a PDF. The press release is a document someone emailed you. The fall schedule exists, but nobody ever built it a microsite. <strong>Most tools ask you to paste a link, and shrug if you do not have one.</strong>',
       paragraph2:
-        'PolyWiz\'s Campaign Planner turns any URL into weeks of platform-specific content — extracting text, images, and metadata to build campaigns that sustain attention long after opening night.',
+        'PolyWiz takes a URL, an uploaded PDF, or a link to a PDF on your own site, and builds weeks of platform-specific content from any of them. Your own photographs come along too, so material that arrived as a document still produces a campaign that looks like your organization.',
     },
     howItWorks: {
-      subtitle: 'From URL to complete campaign in four steps.',
+      subtitle: 'From your material to a complete campaign in four steps.',
       steps: [
-        { title: 'Paste a URL', description: 'Drop in any exhibition page, newsletter, blog post, or event listing. PolyWiz uses Firecrawl to extract content and images.' },
+        { title: 'Bring what you have', description: 'A link to a page, a PDF you upload, or a link to a PDF hosted on your own site. PolyWiz reads it and works out what there is to promote.' },
         { title: 'Configure the campaign', description: 'Choose the campaign type, select brands, set editorial direction, and pick your schedule profile.' },
-        { title: 'AI generates the posts', description: 'Claude generates platform-specific drafts shaped by your 8-dimension brand voice and campaign type rules.' },
+        { title: 'The posts get written', description: 'Platform-specific drafts shaped by your brand voice and the kind of campaign you are running.' },
         { title: 'Review and publish', description: 'Edit, approve, and schedule posts individually or in bulk across all 13 platforms.' },
       ],
     },
     details: [
-      '11 campaign types: exhibitions, newsletters, podcasts, events, and more',
-      'Firecrawl-powered content extraction with smart image filtering',
-      'Multiple source URLs per campaign for richer content',
-      'Specialized scraping for exhibitions, newsletters, and artist profiles',
+      'Campaign types for exhibitions, newsletters, podcasts, events, artist profiles and press releases, with more added over time',
+      'Start from a web page, an uploaded PDF up to 10 MB, or a link to a PDF on your own site',
+      'PolyWiz proposes a campaign title from the document itself, and you can change it',
+      'A read at upload tells you whether there is a campaign in the document. It advises, it never blocks',
+      'Several source pages can feed a single campaign',
     ],
   },
   {
-    id: 'ai-post-generator',
-    slug: 'ai-post-generator',
+    id: 'post-generator',
+    slug: 'post-generator',
     sortOrder: 2,
     status: 'live',
     iconName: 'Sparkles',
     iconColorClass: 'text-secondary-400',
-    homepageLabel: 'AI-Powered',
-    title: 'AI Post Generator',
+    homepageLabel: 'Drafting',
+    title: 'Post Generator',
     benefitHeadline: 'Platform-perfect drafts in seconds',
     description:
-      'AI generates posts tuned for each platform\'s voice, length, and audience — from LinkedIn articles to Instagram captions to Bluesky threads.',
+      'Posts written for each platform\'s voice, length and audience, from LinkedIn articles to Instagram captions to Bluesky threads. Every one arrives as a draft for your team to approve.',
     images: [
-      { src: '/images/features/ai-generation-system-four-pillars.png', caption: 'AI generation system with campaign rules, brand voice, image integrity, and platform formatting' },
-      { src: '/images/features/campaign-timeline-with-instagram-posts.png', caption: 'Campaign timeline showing AI-generated Instagram posts with approve and dismiss actions' },
+      { src: '/images/features/campaign-timeline-with-instagram-posts.png', caption: 'Campaign timeline showing drafted Instagram posts with approve and dismiss actions' },
     ],
-    cta: 'See AI Post Generator',
-    detailPageTitle: 'AI Post Generator',
+    cta: 'See Post Generator',
+    detailPageTitle: 'Post Generator',
     detailPageDescription:
-      'Generate platform-perfect social media posts with AI that understands your brand voice, campaign type rules, and each platform\'s unique requirements.',
+      'Drafts written for your brand voice and for each platform\'s requirements, ready for you to edit and approve before anything goes live.',
     opportunityStatement: {
       paragraph1:
         'Writing social media posts for 13 platforms is tedious. Each platform has its own <strong>character limits, hashtag conventions, tone expectations, and media formats</strong>.',
       paragraph2:
-        'PolyWiz\'s AI Post Generator uses Claude to create platform-native drafts shaped by your brand voice dimensions — so LinkedIn gets thoughtful articles while Instagram gets punchy captions with relevant hashtags.',
+        'PolyWiz writes the first draft for each one, shaped by your brand voice dimensions, so LinkedIn gets a considered article while Instagram gets a punchy caption. <strong>Nothing publishes on its own.</strong> Every post waits for someone on your team to read it, change it, and approve it.',
     },
     howItWorks: {
-      subtitle: 'AI that understands your brand and every platform.',
+      subtitle: 'Drafts shaped by your brand and by every platform.',
       steps: [
-        { title: 'Brand voice analysis', description: 'Your 8-dimension tone profile (Wit, Warmth, Authority, etc.) shapes every draft.' },
-        { title: 'Platform-specific generation', description: 'Each platform gets content formatted for its unique requirements and audience.' },
-        { title: 'Campaign type rules', description: 'Dynamic editorial rules adjust generation based on whether it\'s an exhibition, newsletter, or event.' },
-        { title: 'Human review', description: 'Every post is a draft — edit, refine, and approve before anything goes live.' },
+        { title: 'Your brand voice', description: 'Your 8-dimension tone profile (Wit, Warmth, Authority, and the rest) shapes every draft.' },
+        { title: 'Written per platform', description: 'Each platform gets content formatted for its own requirements and audience.' },
+        { title: 'Shaped by campaign type', description: 'Editorial rules adjust the writing based on whether it is an exhibition, a newsletter, or an event.' },
+        { title: 'You have the last word', description: 'Every post is a draft. Edit, refine, and approve before anything goes live.' },
       ],
     },
     details: [
-      'Brand-aware generation with dynamic content rules per campaign type',
+      'Drafts shaped by your brand voice and by the kind of campaign you are running',
       'Platform-specific formatting, hashtags, and character limits',
-      'Image-Text Integrity Rule prevents hallucinated artist names',
+      'Never invents an artist name for a picture it was given',
       'Per-campaign editorial direction for fine-tuned output',
     ],
   },
   {
     id: 'tone-voice-system',
     slug: 'tone-voice-system',
-    sortOrder: 3,
+    sortOrder: 7,
     status: 'live',
     iconName: 'SlidersHorizontal',
     iconColorClass: 'text-accent-400',
@@ -195,12 +195,12 @@ export const FEATURES: FeatureDefinition[] = [
     cta: 'See Voice System',
     detailPageTitle: 'Tone & Voice System',
     detailPageDescription:
-      'Control your brand voice across eight independent dimensions — Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, and Intimacy — so every generated post sounds authentically yours.',
+      'Control your brand voice across eight independent dimensions - Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, and Intimacy - so every generated post sounds authentically yours.',
     details: [
       'Eight tone dimensions: Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, Intimacy',
       'Master intensity slider from Professional to Full Voice',
       'Per-brand defaults with per-campaign overrides',
-      'Adaptive scaling — dimensions modulate as intensity changes',
+      'Adaptive scaling - dimensions modulate as intensity changes',
     ],
   },
   {
@@ -214,7 +214,7 @@ export const FEATURES: FeatureDefinition[] = [
     title: 'Smart Scheduler',
     benefitHeadline: 'Months of promotion, not just opening night',
     description:
-      'The tapering algorithm distributes posts over weeks and months with platform-appropriate cadence — so your exhibition gets sustained attention.',
+      'The tapering algorithm distributes posts over weeks and months with platform-appropriate cadence - so your exhibition gets sustained attention.',
     images: [
       { src: '/images/features/calendar-april-2026-scheduled-posts.png', caption: 'April 2026 calendar with color-coded posts across six platforms and daily post counts' },
       { src: '/images/features/per-brand-cadence-settings.png', caption: 'Smart scheduling algorithm profiles: Sprint, Standard, Evergreen, and Marathon' },
@@ -223,12 +223,12 @@ export const FEATURES: FeatureDefinition[] = [
     cta: 'See Smart Scheduler',
     detailPageTitle: 'Smart Scheduler',
     detailPageDescription:
-      'Distribute posts intelligently over weeks and months with tapering algorithms, per-brand cadence controls, and collision avoidance — so your content gets sustained attention.',
+      'Distribute posts intelligently over weeks and months with tapering algorithms, per-brand cadence controls, and collision avoidance - so your content gets sustained attention.',
     howItWorks: {
       subtitle: 'Intelligent post distribution that sustains attention.',
       steps: [
         { title: 'Choose a profile', description: 'Sprint (2 weeks), Standard (6 weeks), Evergreen (3 months), or Marathon (6 months).' },
-        { title: 'Tapering algorithm', description: 'Posts are front-loaded with natural decay — more activity at launch, sustained presence over time.' },
+        { title: 'Tapering algorithm', description: 'Posts are front-loaded with natural decay - more activity at launch, sustained presence over time.' },
         { title: 'Collision avoidance', description: 'Per-brand cadence limits prevent platform flooding and audience fatigue.' },
         { title: 'Visual timeline', description: 'Calendar heatmap shows your entire schedule at a glance with day-by-day drill-down.' },
       ],
@@ -259,7 +259,7 @@ export const FEATURES: FeatureDefinition[] = [
     cta: 'See Approval Queue',
     detailPageTitle: 'Approval Queue',
     detailPageDescription:
-      'Every AI-generated post is a draft until your team approves it. Review, edit, swap images from the campaign library, and publish individually or in bulk.',
+      'Every post is a draft until your team approves it. Review, edit, swap images from the campaign library, and publish individually or in bulk.',
     details: [
       'Inline editing with campaign image library quick-access',
       'Approve, dismiss, or bulk-action across campaigns',
@@ -270,7 +270,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'cover-slide-designer',
     slug: 'cover-slide-designer',
-    sortOrder: 6,
+    sortOrder: 8,
     status: 'live',
     iconName: 'Layers',
     iconColorClass: 'text-accent-400',
@@ -278,17 +278,19 @@ export const FEATURES: FeatureDefinition[] = [
     title: 'Cover Slide Designer',
     benefitHeadline: 'Branded carousel covers in clicks',
     description:
-      'Design editorial cover slides for carousel posts with a template-driven visual editor. Choose layouts, customize colors, and let AI write the headline.',
+      'Design editorial cover slides for carousel posts with a template-driven visual editor. Choose layouts, customize colors, and have the headline drafted for you.',
     images: [
-      { src: '/images/features/carousel-post-editor-with-cover-slides.png', caption: 'Instagram carousel post with cover slides, post text, and publish controls' },
-      { src: '/images/features/cover-slide-finished-interview.png', caption: 'Finished Q+Art Interview cover slide with artist portrait, headline, and branding' },
-      { src: '/images/features/cover-slide-template-picker.png', caption: 'Template picker with Quote and Podcast Quote layouts in light and dark variants' },
+      { src: '/images/features/cover-slide-templates-cover-dark-and-big-type-overlay.jpg', caption: 'One headline in two dark treatments: artwork above a caption block, and the headline set large in coral straight over a textured field' },
+      { src: '/images/features/cover-slide-templates-cover-light-and-framed-light.jpg', caption: 'The same headline in two light treatments: artwork above a white caption block, and a cream-framed layout with the artwork inset' },
+      { src: '/images/features/cover-slide-templates-masthead-band-and-framed-dark.jpg', caption: 'A coral masthead band above the artwork, next to a cream-framed layout with the headline and a one-line standfirst beneath' },
+      { src: '/images/features/cover-slide-templates-podcast-quote-and-podcast-masthead.jpg', caption: 'Podcast layouts: the headline in italic serif over the artwork, and the issue number and headline banded across a monochrome image' },
+      { src: '/images/features/cover-slide-templates-quote-dark-and-solid-statement.jpg', caption: 'A pull quote set over the artwork, next to a solid coral panel carrying only type and the logo' },
       { src: '/images/features/cover-slide-band-layout.png', caption: 'Band-based cover slide layout with image, text, and branding sections' },
     ],
     cta: 'See Cover Designer',
     detailPageTitle: 'Cover Slide Designer',
     detailPageDescription:
-      'Design branded carousel cover slides with a template-driven visual editor. Band-based layouts, eyedropper colors, font sizing, and AI headlines.',
+      'Design branded carousel cover slides with a template-driven visual editor. Band-based layouts, eyedropper colors, font sizing, and drafted headlines.',
     details: [
       'Band-based layout system: images, text, branding, separators',
       'Template gallery with brand-scoped and type-aware suggestions',
@@ -299,7 +301,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'quick-post',
     slug: 'quick-post',
-    sortOrder: 7,
+    sortOrder: 9,
     status: 'live',
     iconName: 'Zap',
     iconColorClass: 'text-primary-400',
@@ -307,7 +309,7 @@ export const FEATURES: FeatureDefinition[] = [
     title: 'Quick Post',
     benefitHeadline: 'One-off posts without the overhead',
     description:
-      'Not everything needs a full campaign. Quick Post lets you create, preview, and publish a single post to any platform — ideal for timely announcements.',
+      'Not everything needs a full campaign. Quick Post lets you create, preview, and publish a single post to any platform - ideal for timely announcements.',
     images: [
       { src: '/images/features/quick-post-platform-selector.png', caption: 'Quick Post creation with platform selector, URL input, editorial direction, and tone slider' },
       { src: '/images/features/quick-post-schedule-later.png', caption: 'Schedule a quick post for a future date and time' },
@@ -315,7 +317,7 @@ export const FEATURES: FeatureDefinition[] = [
     cta: 'See Quick Post',
     detailPageTitle: 'Quick Post',
     detailPageDescription:
-      'Create, preview, and publish a single post to any platform without campaign overhead — ideal for timely announcements and spur-of-the-moment shares.',
+      'Create, preview, and publish a single post to any platform without campaign overhead - ideal for timely announcements and spur-of-the-moment shares.',
     details: [
       'Standalone post creation without campaign context',
       'Image picker with preview during generation',
@@ -325,7 +327,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'multi-platform-publisher',
     slug: 'multi-platform-publisher',
-    sortOrder: 8,
+    sortOrder: 10,
     status: 'live',
     iconName: 'LayoutGrid',
     iconColorClass: 'text-secondary-400',
@@ -333,7 +335,7 @@ export const FEATURES: FeatureDefinition[] = [
     title: 'Multi-Platform Publisher',
     benefitHeadline: '13 platforms, one dashboard',
     description:
-      'Instagram, LinkedIn, X, Threads, Bluesky, TikTok, Facebook, Pinterest, YouTube, and more — publish everywhere from a single approval queue.',
+      'Instagram, LinkedIn, X, Threads, Bluesky, TikTok, Facebook, Pinterest, YouTube, and more - publish everywhere from a single approval queue.',
     images: [
       { src: '/images/features/connected-accounts-six-platforms.png', caption: 'Connected accounts with six platforms: Bluesky, Facebook, Instagram, LinkedIn, Pinterest, and Threads' },
     ],
@@ -351,7 +353,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'brand-manager',
     slug: 'brand-manager',
-    sortOrder: 9,
+    sortOrder: 11,
     status: 'live',
     iconName: 'Building2',
     iconColorClass: 'text-accent-400',
@@ -367,7 +369,7 @@ export const FEATURES: FeatureDefinition[] = [
     cta: 'See Brand Manager',
     detailPageTitle: 'Brand Manager',
     detailPageDescription:
-      'Manage multiple brands with distinct voice dimensions, cadence defaults, connected accounts, and team permissions — all from one tool.',
+      'Manage multiple brands with distinct voice dimensions, cadence defaults, connected accounts, and team permissions - all from one tool.',
     details: [
       '8-dimension tone system with per-brand defaults',
       'Per-brand posting cadence, timezone, and logo variants',
@@ -376,86 +378,75 @@ export const FEATURES: FeatureDefinition[] = [
     ],
   },
   {
-    id: 'image-optimizer',
-    slug: 'image-optimizer',
-    sortOrder: 10,
+    id: 'campaign-images',
+    slug: 'campaign-images',
+    sortOrder: 3,
     status: 'live',
     iconName: 'ImagePlus',
     iconColorClass: 'text-primary-400',
     homepageLabel: 'Visual Tools',
-    title: 'Image Optimizer',
-    benefitHeadline: 'Gallery-ready visuals, platform-optimized',
+    title: 'Campaign Images',
+    benefitHeadline: 'Your images, ready for every platform',
     description:
-      'Auto-crop, compress, and optimize images to fit each platform\'s requirements. AI outpainting extends images that don\'t fit.',
+      'Upload your own photographs, or pull them in from another page. Everything for the campaign sits in one place, and PolyWiz sizes each picture correctly for wherever it is going.',
     images: [
-      { src: '/images/features/ai-outpainting-aspect-ratio.png', caption: 'AI outpainting extending image edges to fit platform aspect ratios' },
-      { src: '/images/features/platform-auto-crop-formats.png', caption: 'Platform-specific auto-crop for square, portrait, landscape, and vertical formats' },
       { src: '/images/features/campaign-image-library.png', caption: 'Campaign image library with scraped images available during post editing' },
+      { src: '/images/features/image-edges-extended-to-fit.png', caption: 'Image edges extended automatically to fit platform aspect ratios' },
+      { src: '/images/features/platform-auto-crop-formats.png', caption: 'Platform-specific auto-crop for square, portrait, landscape, and vertical formats' },
     ],
-    cta: 'See Image Optimizer',
-    detailPageTitle: 'Image Optimizer',
+    cta: 'See Campaign Images',
+    detailPageTitle: 'Campaign Images',
     detailPageDescription:
-      'Auto-crop, compress, AI outpaint, and optimize images to fit each platform\'s requirements — so your artwork always looks its best.',
+      'Bring your own photographs to a campaign or import them from another page. One place for every image, labelled with where it came from, sized correctly for each platform.',
+    opportunityStatement: {
+      paragraph1:
+        'Your best photographs are rarely on the page you are promoting. They are on a hard drive, in the folder from the opening, or attached to an email from the artist. <strong>A campaign built only from what a web page gave up is a campaign missing its best pictures.</strong>',
+      paragraph2:
+        'So bring your own. Upload from your machine or import from another page, and everything lands in one place for the campaign, labelled with where it came from. Captions you correct stay corrected, and your pictures are spread across the campaign rather than one image doing all the work.',
+    },
     details: [
-      'AI outpainting for aspect ratio correction via Replicate Flux',
-      'Platform-specific auto-crop (square, portrait, landscape, vertical)',
-      'Vercel Blob permanent image hosting with deduplication',
-      'Campaign image library surfaces scraped images during editing',
+      'Upload your own images to a campaign, or import them from another page',
+      'Every picture for the campaign sits in one place, labelled with where it came from',
+      'Captions you write or correct stay that way, even when posts are generated again',
+      'PolyWiz describes what is in a picture without ever guessing who made it. It writes "a large abstract canvas in reds", never an attribution',
+      'Your images are spread across the campaign instead of one picture carrying every post',
+      'Automatic sizing and cropping for each platform, including extending an image that does not quite fit',
     ],
   },
   {
-    id: 'link-shortener',
-    slug: 'link-shortener',
-    sortOrder: 11,
-    status: 'live',
-    iconName: 'Link2',
-    iconColorClass: 'text-secondary-400',
-    homepageLabel: 'Analytics',
-    title: 'Link Shortener',
-    benefitHeadline: 'Branded links with tracking built in',
-    description:
-      'Short.io integration with per-brand domains and UTM parameters. Track which campaigns drive real engagement.',
-    images: [
-      { src: '/images/features/branded-short-domains.png', caption: 'Per-brand custom short domains with Short.io integration' },
-      { src: '/images/features/automatic-utm-tagging.png', caption: 'Automatic UTM parameter tagging on all published links' },
-      { src: '/images/features/click-tracking-dashboard.png', caption: 'Click tracking analytics across all shortened campaign links' },
-    ],
-    cta: 'See Link Shortener',
-    detailPageTitle: 'Link Shortener',
-    detailPageDescription:
-      'Branded short links with per-brand domains, automatic UTM parameters, and click tracking across all published content.',
-    details: [
-      'Per-brand custom short domains',
-      'Automatic UTM parameter tagging',
-      'Click tracking across all published links',
-    ],
-  },
-  {
-    id: 'campaign-dashboard',
-    slug: 'campaign-dashboard',
-    sortOrder: 12,
+    id: 'results-reporting',
+    slug: 'results-reporting',
+    sortOrder: 6,
     status: 'live',
     iconName: 'BarChart3',
     iconColorClass: 'text-accent-400',
-    homepageLabel: 'Analytics',
-    title: 'Campaign Dashboard',
-    benefitHeadline: 'Real-time stats across all campaigns',
+    homepageLabel: 'Measurement',
+    title: 'Results & Reporting',
+    benefitHeadline: 'Know what landed',
     description:
-      'See what\'s pending, scheduled, published, and failed — at a glance. Filter by time range, drill into any campaign, and catch problems before your audience does.',
+      'Impressions, engagement, clicks and follower growth for everything you published, next to what shipped and what failed. Come to the board meeting with numbers.',
     images: [
       { src: '/images/features/dashboard-overview-publishing-pipeline.png', caption: 'Campaign operations dashboard with publishing pipeline, pending review count, and approval queue' },
       { src: '/images/features/campaigns-list-overview.png', caption: 'Campaigns grid with campaign types, status badges, schedule profiles, and calendar links' },
       { src: '/images/features/failed-post-alerts.png', caption: 'Failed post alerts with one-click retry or delete actions' },
     ],
-    cta: 'See Dashboard',
-    detailPageTitle: 'Campaign Dashboard',
+    cta: 'See Results & Reporting',
+    detailPageTitle: 'Results & Reporting',
     detailPageDescription:
-      'Real-time campaign statistics with configurable time ranges, pending queues, scheduled heatmaps, and failed post alerts.',
+      'What each post earned, whether your audience grew, and what shipped or failed along the way. Reporting written for the person who has to answer to a board.',
+    opportunityStatement: {
+      paragraph1:
+        'You publish for months, and then someone asks how it went. <strong>Most teams answer with a feeling.</strong> The posts went out, the calendar looks busy, and whether any of it reached anyone is anybody\'s guess.',
+      paragraph2:
+        'PolyWiz reports what each post earned and whether your audience actually grew, alongside the plainer question of what shipped and what failed. The campaign stops being a pipeline that ends at publish, and becomes a loop where what worked shapes what you make next.',
+    },
     details: [
-      'Configurable time ranges: today, 7d, 30d, 90d, YTD, all time',
-      'Pending approval queue with deep-links to campaign detail',
-      'Scheduled post timeline heatmap across all brands',
-      'Failed post alerts with one-click retry or delete',
+      'Impressions, likes, comments, shares and clicks, post by post',
+      'Follower counts and growth over time, per platform and per brand',
+      'Time ranges from a week to a year, so a weekly check and an annual report use the same screen',
+      'What is pending, scheduled, published and failed, including the real reason a post failed',
+      'Branded short links that carry your own domain on everything you publish',
+      'Figures appear wherever each platform reports them, and PolyWiz says so plainly when one does not',
     ],
   },
 ];

@@ -20,7 +20,7 @@ function ImageCarousel({ images, alt }: { images: { src: string; caption?: strin
     }
   }, [isInView]);
 
-  // No auto-rotation — lead image stays visible, users click dots to browse
+  // No auto-rotation - lead image stays visible, users click dots to browse
 
   // Clamp index if images array changed
   const safeIndex = Math.min(activeIndex, images.length - 1);
@@ -49,7 +49,7 @@ function ImageCarousel({ images, alt }: { images: { src: string; caption?: strin
           >
             <Image
               src={images[safeIndex].src}
-              alt={images[safeIndex].caption || `${alt} — view ${safeIndex + 1}`}
+              alt={images[safeIndex].caption || `${alt} - view ${safeIndex + 1}`}
               fill
               className="object-contain"
             />

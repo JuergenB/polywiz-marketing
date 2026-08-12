@@ -10,7 +10,7 @@ import { siteConfig } from '@/config/site';
 export function Hero() {
   return (
     <div className="relative overflow-hidden bg-navy-950">
-      {/* Background image — visible at edges, darkened in center for text readability */}
+      {/* Background image - visible at edges, darkened in center for text readability */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg.png"
@@ -23,7 +23,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-navy-950/25" />
       </div>
 
-      {/* Bottom edge fade — smooth transition to next section */}
+      {/* Bottom edge fade - smooth transition to next section */}
       <div className="absolute inset-x-0 bottom-0 h-[280px] bg-gradient-to-b from-transparent via-navy-950/60 to-navy-950" />
 
       <Container className="relative">
@@ -52,10 +52,10 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0.16 }}
             className="mx-auto mt-6 max-w-2xl text-xl/8 text-gray-400"
           >
-            Exhibitions, newsletters, podcast episodes, events — most get a
+            Exhibitions, newsletters, podcast episodes, events - most get a
             single post on launch day, then silence. PolyWiz generates weeks of
             platform-specific content, designs carousel covers, and schedules
-            everything across {siteConfig.platforms.length} platforms — with human approval
+            everything across {siteConfig.platforms.length} platforms - with human approval
             before anything goes live.
           </motion.p>
 

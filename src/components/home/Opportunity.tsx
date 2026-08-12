@@ -5,6 +5,11 @@ import { Container } from '@/components/ui/Container';
 
 const points = [
   {
+    title: 'Your material was never a web page',
+    description:
+      'The season brochure is a PDF. The press release arrived by email. The installation shots are in a folder on somebody\'s hard drive. Most tools want a link, and have nothing to say if you do not have one.',
+  },
+  {
     title: 'One post on opening night, then silence',
     description:
       'Most arts organizations promote exhibitions, events, and newsletters with a single social post on launch day. After that, nothing.',
@@ -12,12 +17,12 @@ const points = [
   {
     title: 'Every platform wants something different',
     description:
-      'Instagram carousels, LinkedIn articles, Bluesky threads, TikTok hooks — each platform demands its own format, voice, and cadence.',
+      'Instagram carousels, LinkedIn articles, Bluesky threads, TikTok hooks. Each wants its own format, voice and cadence, and when a handful of people share the duties the repetitive work crowds out the creative work.',
   },
   {
-    title: 'Small teams can\'t do it manually',
+    title: 'You post into the void',
     description:
-      'When 2-10 people share marketing duties across multiple brands and 13 platforms, the repetitive work crowds out the creative work.',
+      'Months of publishing, and then a board member asks how it went. Without numbers the honest answer is a shrug, and nothing you learned makes the next campaign any better.',
   },
 ];
 
@@ -34,7 +39,7 @@ export function Opportunity() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {points.map((point, index) => (
             <motion.div
               key={point.title}

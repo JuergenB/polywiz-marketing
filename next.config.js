@@ -11,6 +11,16 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  // Feature slugs retired when the registry was restructured (#5, #6). These
+  // URLs were in the published sitemap, so they redirect rather than 404.
+  async redirects() {
+    return [
+      { source: '/features/link-shortener', destination: '/features/results-reporting', permanent: true },
+      { source: '/features/campaign-dashboard', destination: '/features/results-reporting', permanent: true },
+      { source: '/features/image-optimizer', destination: '/features/campaign-images', permanent: true },
+      { source: '/features/ai-post-generator', destination: '/features/post-generator', permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;
