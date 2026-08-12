@@ -8,6 +8,7 @@ import { EarlyAccessButton } from '@/components/ui/EarlyAccessButton';
 import { Container } from '@/components/ui/Container';
 import { ImageLightbox } from '@/components/ui/ImageLightbox';
 import { HorizontalTimeline } from '@/components/ui/HorizontalTimeline';
+import { CampaignTypeGrid } from '@/components/features/CampaignTypeGrid';
 import { CheckCircle } from 'lucide-react';
 import type { FeatureDefinition } from '@/config/tools';
 import { resolveIcon } from '@/config/tools';
@@ -281,6 +282,16 @@ export default function FeatureDetailTemplate({ feature }: { feature: FeatureDef
             </div>
           </Container>
         </section>
+      )}
+
+      {/* Campaign types (#8) - sits below Key Features, as the drill-down into
+          the one choice that changes how the whole campaign behaves. Registry
+          -driven, so only features that define campaignTypes render it. */}
+      {feature.campaignTypes && (
+        <CampaignTypeGrid
+          subtitle={feature.campaignTypes.subtitle}
+          types={feature.campaignTypes.types}
+        />
       )}
 
       {/* CTA Section */}

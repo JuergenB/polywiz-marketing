@@ -12,6 +12,15 @@ import {
   Layers,
   SlidersHorizontal,
   BarChart3,
+  Mail,
+  FileText,
+  Frame,
+  Palette,
+  Mic,
+  CalendarDays,
+  CalendarRange,
+  Megaphone,
+  Newspaper,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -31,6 +40,16 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Layers,
   SlidersHorizontal,
   BarChart3,
+  // Campaign types (#8)
+  Mail,
+  FileText,
+  Frame,
+  Palette,
+  Mic,
+  CalendarDays,
+  CalendarRange,
+  Megaphone,
+  Newspaper,
 };
 
 export function resolveIcon(name: string): LucideIcon {
@@ -50,6 +69,26 @@ export interface FeatureImage {
 
 export interface HowItWorksStep {
   title: string;
+  description: string;
+}
+
+/**
+ * One selectable campaign type, written to answer the only question a visitor
+ * actually has at the picker: why would I choose this one rather than another?
+ *
+ * ⛔ NEVER publish a count alongside these (#8). Selectability is driven by
+ * Airtable `Status = Active` in the app repo, not by a constant in either
+ * codebase, so any number here goes stale with no commit anywhere to catch it.
+ * Name the kinds, never the count - and do not add numbering that implies a
+ * fixed set. Types that exist but are not selectable (Public Art, Video/Film,
+ * Custom) stay off the site until they are.
+ */
+export interface CampaignType {
+  name: string;
+  iconName: string;
+  /** The outcome, in the user's terms. Not a definition of the type. */
+  benefitHeadline: string;
+  /** What it does differently from every other type. */
   description: string;
 }
 
@@ -81,6 +120,10 @@ export interface FeatureDefinition {
     steps: HowItWorksStep[];
   };
   details: string[];
+  campaignTypes?: {
+    subtitle: string;
+    types: CampaignType[];
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -132,6 +175,75 @@ export const FEATURES: FeatureDefinition[] = [
       'A read at upload tells you whether there is a campaign in the document. It advises, it never blocks',
       'Several source pages can feed a single campaign',
     ],
+    campaignTypes: {
+      subtitle:
+        'The type you choose changes how the campaign behaves: what gets pulled out of your material, how the posts are written, and how they are spaced across the calendar. More types are added over time.',
+      types: [
+        {
+          name: 'Exhibition',
+          iconName: 'Frame',
+          benefitHeadline: 'Promote the whole run, not just the opening',
+          description:
+            'Openings get a post. The rest of the run gets silence. This pulls the artists, dates, and venue off your exhibition page or brochure and spreads coverage from the announcement through to the final week, so someone who missed the reception still hears about the show while it is still hanging.',
+        },
+        {
+          name: 'Newsletter',
+          iconName: 'Mail',
+          benefitHeadline: 'Give every issue a second life',
+          description:
+            'Your issue lands in inboxes once and its work is done. This turns it into posts that keep pointing back at it for days afterward, pulling out the individual pieces so the writing you already finished keeps finding readers who are not on your list yet.',
+        },
+        {
+          name: 'Blog Post',
+          iconName: 'FileText',
+          benefitHeadline: 'One article, several angles',
+          description:
+            'A single link drop scrolls away within the hour. This separates out the distinct ideas in the piece so each one gets its own moment and its own audience, instead of asking one post to carry everything the article had to say.',
+        },
+        {
+          name: 'Artist Profile',
+          iconName: 'Palette',
+          benefitHeadline: 'Introduce the artist, not just the link',
+          description:
+            'Built around a person and a body of work rather than an event with a date. The posts unfold as a story across the week, the work itself carrying the images, so a profile reads as an introduction rather than an announcement that has already passed.',
+        },
+        {
+          name: 'Podcast Episode',
+          iconName: 'Mic',
+          benefitHeadline: 'Every episode gets a week, not a day',
+          description:
+            'Release day is the smallest audience an episode will ever have. This pulls quotes and talking points out of the conversation and schedules them across the days that follow, so the episode keeps resurfacing while it is still current.',
+        },
+        {
+          name: 'Event',
+          iconName: 'CalendarDays',
+          benefitHeadline: 'Coverage before, during, and after',
+          description:
+            'The posts that fill a room are the ones in the week beforehand, not the one on the morning of. Build-up, day-of reminders, and follow-up are all scheduled around the date you give it, so attendance is worked at rather than hoped for.',
+        },
+        {
+          name: 'Events List',
+          iconName: 'CalendarRange',
+          benefitHeadline: 'A season promoted as a season',
+          description:
+            'A schedule page usually gets one post and a link to the calendar. This treats each entry as its own thing to promote, timed against its own date, so a whole season gets sustained attention instead of a single announcement in September.',
+        },
+        {
+          name: 'Open Call',
+          iconName: 'Megaphone',
+          benefitHeadline: 'Keep the deadline in front of people',
+          description:
+            'Submissions cluster in the last few days, and everything before that is quiet. Reminders are spread across the whole window with the pressure rising as it closes, so applicants who meant to enter and forgot are prompted while there is still time.',
+        },
+        {
+          name: 'Press Release',
+          iconName: 'Newspaper',
+          benefitHeadline: 'Say it in your own voice, everywhere',
+          description:
+            'Starts from a release as a web page or as a PDF you upload. Formal announcement language does not survive contact with social platforms, so the news is rewritten to read naturally on each one while the facts, names, and dates stay exactly as you wrote them.',
+        },
+      ],
+    },
   },
   {
     id: 'post-generator',
@@ -285,6 +397,7 @@ export const FEATURES: FeatureDefinition[] = [
       { src: '/images/features/cover-slide-templates-masthead-band-and-framed-dark.jpg', caption: 'A coral masthead band above the artwork, next to a cream-framed layout with the headline and a one-line standfirst beneath' },
       { src: '/images/features/cover-slide-templates-podcast-quote-and-podcast-masthead.jpg', caption: 'Podcast layouts: the headline in italic serif over the artwork, and the issue number and headline banded across a monochrome image' },
       { src: '/images/features/cover-slide-templates-quote-dark-and-solid-statement.jpg', caption: 'A pull quote set over the artwork, next to a solid coral panel carrying only type and the logo' },
+      { src: '/images/features/cover-slide-templates-quote-light-and-podcast-quote-light.jpg', caption: 'The light pair: a pull quote in italic serif above pale artwork, and a podcast layout banding the headline and standfirst across the same image' },
       { src: '/images/features/cover-slide-band-layout.png', caption: 'Band-based cover slide layout with image, text, and branding sections' },
     ],
     cta: 'See Cover Designer',
