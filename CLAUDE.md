@@ -303,9 +303,10 @@ These are the actual capabilities to market. Keep this list updated as the app e
 ### Live
 - Campaign creation from URL (Firecrawl scraping with smart image filtering)
 - AI post generation (Claude Sonnet 4.6, brand-aware, dynamic rules per campaign type)
-- Campaign types: Newsletter, Blog Post, Exhibition, Artist Profile, Podcast Episode, Event, Events List, Open Call, Press Release (Public Art, Video/Film and Custom are defined but not selectable)
+- Campaign types: Newsletter, Blog Post, Exhibition, Artist Profile, Podcast Episode, Event, Events List, Open Call, Press Release, Brand Awareness, Fundraiser (Public Art, Video/Film and Custom are defined but not selectable)
   - ⛔ **Never publish a campaign-type count** (owner decision, 2026-08-12). Selectability is driven by **Airtable `Status = Active`**, not a code constant (polywiz-app `campaigns/new/page.tsx:267-274`), so any number goes stale with no commit anywhere. `ENABLED_CAMPAIGN_TYPES` is only a loading fallback and is already out of date. Name the kinds, never the count.
   - `Institutional` was replaced by `Press Release` in polywiz-app `3a5624b` ([#471](https://github.com/JuergenB/polywiz-app/issues/471)), which works from a URL **or** an uploaded PDF.
+  - `Brand Awareness` and `Fundraiser` were added 2026-08-12 (polywiz-app [#482](https://github.com/JuergenB/polywiz-app/issues/482) / [#480](https://github.com/JuergenB/polywiz-app/issues/480)), both from a URL **or** an uploaded PDF. They are **one editorial pair, split on purpose**: Brand Awareness carries no ask of any kind and nothing in it is time-sensitive, Fundraiser carries the ask. The recommended pattern is ~1 month of the first then ~2 months of the second, which is why the site names the sequence rather than presenting them as two unrelated tiles.
 - **Quick Post** — standalone single-post creation without campaign context
 - **8-dimension Tone & Voice system** (Wit, Warmth, Opinion, Skepticism, Playfulness, Urgency, Authority, Intimacy) with master intensity slider and per-brand defaults
 - **Cover Slide Designer** — template-driven editorial covers for carousel posts with band-based layout, eyedropper colors, font sizing, AI headlines

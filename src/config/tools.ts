@@ -21,6 +21,7 @@ import {
   CalendarRange,
   Megaphone,
   Newspaper,
+  HeartHandshake,
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -50,6 +51,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   CalendarRange,
   Megaphone,
   Newspaper,
+  HeartHandshake,
 };
 
 export function resolveIcon(name: string): LucideIcon {
@@ -147,7 +149,7 @@ export const FEATURES: FeatureDefinition[] = [
       { src: '/images/features/three-ways-in-url-pdf-quick-post.png', caption: 'Three ways in, all converging on platform-specific posts: pasting a URL, uploading a PDF, or writing a quick post' },
       { src: '/images/features/generation-options-platform-toggles.png', caption: 'Platform toggles, variant count, and tone of voice controls' },
       { src: '/images/features/duration-distribution-schedule-profile.png', caption: 'Duration and distribution settings with tapering frequency preview' },
-      { src: '/images/features/campaign-type-picker-dark.jpg', caption: 'Campaign type picker asking what you are promoting, with tiles for newsletters, blog posts, exhibitions, artist profiles, podcast episodes, events, event listings, open calls and press releases' },
+      { src: '/images/features/campaign-type-picker-dark.jpg', caption: 'Campaign type picker asking what you are promoting, with tiles for newsletters, blog posts, exhibitions, artist profiles, podcast episodes, events, event listings, open calls, press releases, brand awareness and fundraisers' },
     ],
     cta: 'See Campaign Planner',
     detailPageTitle: 'Campaign Planner',
@@ -177,7 +179,7 @@ export const FEATURES: FeatureDefinition[] = [
     ],
     campaignTypes: {
       subtitle:
-        'The type you choose changes how the campaign behaves: what gets pulled out of your material, how the posts are written, and how they are spaced across the calendar. More types are added over time.',
+        'The type you choose changes how the campaign behaves: what gets pulled out of your material, how the posts are written, and how they are spaced across the calendar. Some are built to run in sequence, so a month of Brand Awareness can introduce the organization before a couple of months of Fundraiser asks anything of anyone. More types are added over time.',
       types: [
         {
           name: 'Exhibition',
@@ -241,6 +243,20 @@ export const FEATURES: FeatureDefinition[] = [
           benefitHeadline: 'Say it in your own voice, everywhere',
           description:
             'Starts from a release as a web page or as a PDF you upload. Formal announcement language does not survive contact with social platforms, so the news is rewritten to read naturally on each one while the facts, names, and dates stay exactly as you wrote them.',
+        },
+        {
+          name: 'Brand Awareness',
+          iconName: 'Building2',
+          benefitHeadline: 'Be known for the whole organization, not one program',
+          description:
+            'People know the one program they came through and never learn what else you run. Starting from an about page or a PDF you upload, this introduces the organization itself, what it stewards and the people behind the work. It asks for nothing at all, only that people follow, read or share, and none of it is pegged to a date, so it still reads true months from now.',
+        },
+        {
+          name: 'Fundraiser',
+          iconName: 'HeartHandshake',
+          benefitHeadline: 'Ask directly, without the countdown',
+          description:
+            'Most appeals get louder as the deadline nears, until pressure is doing the work the cause should be doing. Built from a donation page or a PDF you upload, this blends why the work matters with warm, direct invitations to give and requests to spread the word, where a share counts as real support and not a consolation prize. Every ask is tied to what a gift makes possible, and the end date is a plain calendar fact, never a countdown.',
         },
       ],
     },

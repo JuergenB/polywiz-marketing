@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 const campaignTypes = [
   'Exhibitions', 'Newsletters', 'Podcasts', 'Events', 'Event Listings',
   'Open Calls', 'Artist Profiles', 'Blog Posts', 'Press Releases',
+  'Brand Awareness', 'Fundraisers',
 ];
 
 // The partner list moved to src/config/partners.ts and renders as the
