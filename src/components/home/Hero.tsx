@@ -72,15 +72,11 @@ export function Hero() {
               View Features
             </Button>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="mt-16 text-sm text-gray-500"
-          >
-            Built for Arterial, Not Real Art, Artsville USA, and The Intersect
-          </motion.p>
+          {/* The "Built for Arterial, Not Real Art, …" line that used to close
+              the hero is now the PartnerBand immediately below it (#7): logos
+              instead of a text list, and "development partners" instead of
+              "built for", which says these organizations shaped the product
+              rather than that PolyWiz is their in-house tool. */}
         </div>
       </Container>
     </div>

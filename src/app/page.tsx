@@ -1,4 +1,5 @@
 import { Hero } from '@/components/home/Hero';
+import { PartnerBand } from '@/components/home/PartnerBand';
 import { FeatureShowcase } from '@/components/home/FeatureShowcase';
 import { RemainingFeatures } from '@/components/home/RemainingFeatures';
 import { Opportunity } from '@/components/home/Opportunity';
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <main>
+        <PartnerBand />
         <FeatureShowcase features={featuredFeatures} />
         <RemainingFeatures />
         <Opportunity />

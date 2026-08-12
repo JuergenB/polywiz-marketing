@@ -73,6 +73,29 @@
   display: none;
 }
 
+/* ── Partner band marquee (#7) ── */
+/* The track holds two identical sets of logos and translates by exactly -50%,
+   which lands the second set where the first started. Spacing is per-item
+   padding rather than a flex gap so the two sets tile without a seam. */
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee {
+  animation: partner-marquee 50s linear infinite;
+}
+
+/* Give a reader a way to stop it and study a logo without chasing it. */
+.partner-marquee:hover,
+.partner-marquee:focus-within {
+  animation-play-state: paused;
+}
+
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -81,5 +104,22 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* The blanket rule above collapses the marquee to 0.01ms, which SNAPS the
+     track to translateX(-50%) rather than stopping it - the second (aria-hidden)
+     set would be what a reader ends up looking at. Cancel it outright and let
+     the single visible set wrap and centre as a static row instead. */
+  .partner-marquee {
+    animation: none !important;
+    transform: none !important;
+    width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+
+  .partner-marquee > [aria-hidden='true'] {
+    display: none;
   }
 }

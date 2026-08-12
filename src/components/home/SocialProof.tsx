@@ -13,12 +13,8 @@ const campaignTypes = [
   'Open Calls', 'Artist Profiles', 'Blog Posts', 'Press Releases',
 ];
 
-const brands = [
-  { name: 'Arterial', href: 'https://arterial.org' },
-  { name: 'Not Real Art', href: 'https://notrealart.com' },
-  { name: 'Artsville USA', href: 'https://artsvilleusa.com' },
-  { name: 'The Intersect', href: 'https://theintersect.art' },
-];
+// The partner list moved to src/config/partners.ts and renders as the
+// PartnerBand under the hero (#7).
 
 const audiences = [
   {
@@ -184,30 +180,15 @@ export function SocialProof() {
             </h3>
             <p className="mt-4 text-base text-gray-400">
               PolyWiz isn&apos;t a prototype. It powers active campaigns across{' '}
-              {siteConfig.platforms.length} platforms for these organizations today.
+              {siteConfig.platforms.length} platforms for our development
+              partners today, on work like this.
             </p>
           </div>
 
-          {/* Brands */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-4"
-          >
-            {brands.map((brand) => (
-              <a
-                key={brand.name}
-                href={brand.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-white/5 px-6 py-2.5 font-display text-lg text-white ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/20"
-              >
-                {brand.name}
-              </a>
-            ))}
-          </motion.div>
+          {/* The partner pill row that used to sit here is now the PartnerBand
+              under the hero (#7). Naming the same four organizations twice on
+              one page reads as padding, so this section keeps the campaign-type
+              evidence and lets the band carry the logos. */}
 
           {/* Campaign types */}
           <motion.div
