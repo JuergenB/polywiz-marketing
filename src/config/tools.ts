@@ -145,11 +145,14 @@ export const FEATURES: FeatureDefinition[] = [
     benefitHeadline: 'Start with what you already have',
     description:
       'A link to your exhibition page. The press release sitting on your desktop as a PDF. A season brochure hosted on your own site. Any of the three becomes a multi-week campaign across your platforms.',
+    // Ordered to match the order a user actually meets these screens, which is
+    // also the order of the How It Works steps below: bring your material in,
+    // say what you are promoting, set the generation options, then the schedule.
     images: [
       { src: '/images/features/three-ways-in-url-pdf-quick-post.png', caption: 'Three ways in, all converging on platform-specific posts: pasting a URL, uploading a PDF, or writing a quick post' },
+      { src: '/images/features/campaign-type-picker-dark.jpg', caption: 'Campaign type picker asking what you are promoting, with tiles for newsletters, blog posts, exhibitions, artist profiles, podcast episodes, events, event listings, open calls, press releases, brand awareness and fundraisers' },
       { src: '/images/features/generation-options-platform-toggles.png', caption: 'Platform toggles, variant count, and tone of voice controls' },
       { src: '/images/features/duration-distribution-schedule-profile.png', caption: 'Duration and distribution settings with tapering frequency preview' },
-      { src: '/images/features/campaign-type-picker-dark.jpg', caption: 'Campaign type picker asking what you are promoting, with tiles for newsletters, blog posts, exhibitions, artist profiles, podcast episodes, events, event listings, open calls, press releases, brand awareness and fundraisers' },
     ],
     cta: 'See Campaign Planner',
     detailPageTitle: 'Campaign Planner',
@@ -171,7 +174,11 @@ export const FEATURES: FeatureDefinition[] = [
       ],
     },
     details: [
-      'Campaign types for exhibitions, newsletters, podcasts, events, artist profiles and press releases, with more added over time',
+      // Deliberately not an exhaustive list: the campaignTypes grid below this
+      // section enumerates them properly, and a second copy of the list here
+      // just goes stale independently, which is how this bullet ended up naming
+      // a smaller set than the grid directly beneath it.
+      'A campaign type for each kind of thing you promote, from exhibitions and open calls to newsletters, podcast episodes and fundraisers. The type you pick changes how the posts are written and how they are spaced',
       'Start from a web page, an uploaded PDF up to 10 MB, or a link to a PDF on your own site',
       'PolyWiz proposes a campaign title from the document itself, and you can change it',
       'A read at upload tells you whether there is a campaign in the document. It advises, it never blocks',
