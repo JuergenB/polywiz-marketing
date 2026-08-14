@@ -5,7 +5,7 @@
 //
 // The app and the marketing site must never show different legal text.
 //
-// sha256(text) = f054269eaefe039830bfa844c05b4435462cc2fe9b0738c7b3e70bfb04839fec
+// sha256(text) = 2f2a98e0262f25a34040b271a582b715ba1a2a21ba81ef132e57a158d1285aa9
 
 /**
  * PolyWiz Privacy Policy — canonical text rendered at /privacy on both the app
@@ -36,7 +36,7 @@ The unusual thing about PolyWiz worth understanding up front: **the product's wh
 
 ## 1. Who we are
 
-Polymash, Inc., a Florida corporation. For anything in this policy — questions, requests, complaints — email **support@polymash.com**.
+Polymash, Inc., a Florida corporation. For anything in this policy — questions, requests, complaints — email **legal@polymash.com**.
 
 ## 2. What we collect
 
@@ -159,7 +159,7 @@ Depending on where you live — California (CCPA/CPRA), Colorado, Connecticut, U
 - **Opt out** of sale or targeted advertising — **not applicable here, because we do neither**
 - **Not be discriminated against** for exercising any of these
 
-**To exercise any of them, email support@polymash.com.** We'll respond within 45 days, and tell you if we need longer. We may need to verify who you are first — usually by confirming you control the account email.
+**To exercise any of them, email legal@polymash.com.** We'll respond within 45 days, and tell you if we need longer. We may need to verify who you are first — usually by confirming you control the account email.
 
 If you're outside the United States: PolyWiz is operated from the US and your information is processed there.
 
@@ -171,7 +171,7 @@ Being honest about limits: **PolyWiz is in beta, and no system is perfectly secu
 
 ## 10. Children
 
-PolyWiz is a business tool and isn't directed to children. We don't knowingly collect personal information from anyone under 16. If you believe a child has given us information, email support@polymash.com and we'll delete it.
+PolyWiz is a business tool and isn't directed to children. We don't knowingly collect personal information from anyone under 16. If you believe a child has given us information, email legal@polymash.com and we'll delete it.
 
 ## 11. Changes
 
@@ -179,7 +179,7 @@ We'll update this policy as PolyWiz changes. Every version carries a version num
 
 ## 12. Contact
 
-**support@polymash.com** — questions, requests, complaints, or anything about this policy.
+**legal@polymash.com** — questions, requests, complaints, or anything about this policy.
 
 Polymash, Inc. · Florida, USA
 `

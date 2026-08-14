@@ -5,7 +5,7 @@
 //
 // The app and the marketing site must never show different legal text.
 //
-// sha256(text) = ad0c909bccc29e23d1d0660e53deffddeba61eb08e684acf7b7a40e75ad8eac7
+// sha256(text) = 082f9427e209c05bd6d239d1068eded561e4323a952ce29c8a61628e10612d07
 
 /**
  * PolyWiz Beta Agreement — canonical text rendered at /terms.
@@ -182,11 +182,11 @@ Some states don't allow certain exclusions, so parts of this may not apply to yo
 
 This agreement is governed by the laws of the **State of Florida**, without regard to conflict-of-law rules.
 
-**We'd rather just talk first.** If something goes wrong, email us at support@polymash.com and give us 30 days to sort it out. Most things end there.
+**We'd rather just talk first.** If something goes wrong, email us at legal@polymash.com and give us 30 days to sort it out. Most things end there.
 
 If that doesn't work, any dispute arising out of or relating to this agreement or PolyWiz will be resolved by **binding arbitration**, administered by the **American Arbitration Association (AAA) under its Commercial Arbitration Rules**. Arbitration will take place in **Florida**, or by video conference if we both prefer — and we'll agree to video if you ask, so you're not forced to travel.
 
-- **You can opt out.** You may opt out of arbitration within **30 days** of accepting this agreement by emailing support@polymash.com. If you opt out, neither of us is bound by this arbitration section, and the rest of the agreement still applies.
+- **You can opt out.** You may opt out of arbitration within **30 days** of accepting this agreement by emailing legal@polymash.com. If you opt out, neither of us is bound by this arbitration section, and the rest of the agreement still applies.
 - **This applies to both of us equally.** We have to arbitrate our claims against you too.
 - **Small claims are carved out.** Either of us can bring an individual claim in small claims court instead.
 - **No class actions.** Claims must be brought individually, not as a class or representative action.
@@ -201,7 +201,7 @@ Our [Privacy Policy](/privacy) explains what we collect and why. By using PolyWi
 
 You also agree to **do business with us electronically**. **By checking the box, you consent to receive this agreement and all related notices electronically**, and your click is your signature. You'll need a device with a browser and email access, and you can save or print a copy of this agreement at any time.
 
-You may withdraw that consent by contacting us at support@polymash.com — but doing so ends your ability to use PolyWiz, since the whole thing is online.
+You may withdraw that consent by contacting us at legal@polymash.com — but doing so ends your ability to use PolyWiz, since the whole thing is online.
 
 ### 13. Changes to this agreement
 
@@ -221,7 +221,7 @@ Sections 4 (your promises), 6 (our platform), 8 (indemnification), 9 (no warrant
 
 ### 15. Copyright complaints
 
-If you believe content created or published using PolyWiz infringes your copyright, email **support@polymash.com** with:
+If you believe content created or published using PolyWiz infringes your copyright, email **legal@polymash.com** with:
 
 - a description of the work you say was infringed;
 - a description of the allegedly infringing content and where to find it;
@@ -241,7 +241,7 @@ We'll review it and respond, which may include removing content or ending the ac
 
 ---
 
-**Questions?** support@polymash.com
+**Questions?** legal@polymash.com
 
 Polymash, Inc. · Florida, USA
 `
