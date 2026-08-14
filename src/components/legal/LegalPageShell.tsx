@@ -39,14 +39,24 @@ export function LegalPageShell({
 
           <div className="mt-10">{children}</div>
 
+          {/*
+            Deliberately a form link, not a `mailto:` — this footer rendered the
+            support address as both href and visible text on two pages that are
+            in the sitemap and allowed by robots.txt (#9).
+
+            The addresses INSIDE the document body stay plain and readable on
+            purpose: the arbitration opt-out, the DMCA notice procedure and the
+            data-rights contact each have to name a method that is demonstrably
+            reachable. Do not obfuscate those.
+          */}
           <div className="mt-12 border-t border-white/10 pt-6 text-sm text-gray-500">
-            Questions about this document? Email{' '}
-            <a
-              href="mailto:support@polymash.com"
+            Questions about this document?{' '}
+            <Link
+              href="/contact"
               className="text-primary-400 underline underline-offset-4 transition-colors hover:text-primary-300"
             >
-              support@polymash.com
-            </a>
+              Send us a message
+            </Link>
             .
           </div>
         </div>
