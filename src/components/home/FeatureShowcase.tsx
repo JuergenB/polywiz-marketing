@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { ImageLightbox } from '@/components/ui/ImageLightbox';
+import { CarouselArrows } from '@/components/ui/CarouselArrows';
 import type { FeatureDefinition } from '@/config/tools';
 
 function ImageCarousel({ images, alt }: { images: { src: string; caption?: string }[]; alt: string }) {
@@ -28,7 +29,7 @@ function ImageCarousel({ images, alt }: { images: { src: string; caption?: strin
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden rounded-2xl bg-navy-800 shadow-2xl ring-1 ring-white/[0.08]"
+      className="group relative overflow-hidden rounded-2xl bg-navy-800 shadow-2xl ring-1 ring-white/[0.08]"
     >
       <div
         className="relative aspect-[16/10] cursor-pointer p-6"
@@ -55,6 +56,13 @@ function ImageCarousel({ images, alt }: { images: { src: string; caption?: strin
             />
           </motion.div>
         </AnimatePresence>
+
+        {images.length > 1 && (
+          <CarouselArrows
+            onPrev={() => setActiveIndex((safeIndex - 1 + images.length) % images.length)}
+            onNext={() => setActiveIndex((safeIndex + 1) % images.length)}
+          />
+        )}
       </div>
 
       {(images[safeIndex].caption || images.length > 1) && (

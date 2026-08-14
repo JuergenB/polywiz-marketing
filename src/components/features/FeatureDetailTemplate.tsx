@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { EarlyAccessButton } from '@/components/ui/EarlyAccessButton';
 import { Container } from '@/components/ui/Container';
 import { ImageLightbox } from '@/components/ui/ImageLightbox';
+import { CarouselArrows } from '@/components/ui/CarouselArrows';
 import { HorizontalTimeline } from '@/components/ui/HorizontalTimeline';
 import { CampaignTypeGrid } from '@/components/features/CampaignTypeGrid';
 import { CheckCircle } from 'lucide-react';
@@ -34,22 +35,29 @@ function ScreenshotCarousel({
     }
   }, [isInView]);
 
+  // Every slide gets the same dwell time. The first one used to get 2000ms
+  // against everyone else's 4000ms, which read as a flash rather than a slide.
   useEffect(() => {
     if (screenshots.length <= 1 || isPaused || !isInView) return;
-    const delay = activeIndex === 0 ? 2000 : 4000;
     const timeout = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % screenshots.length);
-    }, delay);
+    }, 4000);
     return () => clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenshots.length, isPaused, isInView, activeIndex]);
 
+  // Only the lightbox pauses rotation. Pausing on hover looked reasonable and
+  // wasn't: the carousel occupies the right half of the hero, which is exactly
+  // where a resting cursor sits, so the whole thing silently froze on slide one
+  // with nothing on screen to explain why.
+  useEffect(() => {
+    setIsPaused(lightboxOpen);
+  }, [lightboxOpen]);
+
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden rounded-2xl bg-navy-800 shadow-2xl ring-1 ring-white/[0.08]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="group relative overflow-hidden rounded-2xl bg-navy-800 shadow-2xl ring-1 ring-white/[0.08]"
     >
       <div
         className="relative aspect-[16/10] cursor-pointer p-6"
@@ -76,6 +84,13 @@ function ScreenshotCarousel({
             />
           </motion.div>
         </AnimatePresence>
+
+        {screenshots.length > 1 && (
+          <CarouselArrows
+            onPrev={() => setActiveIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length)}
+            onNext={() => setActiveIndex((prev) => (prev + 1) % screenshots.length)}
+          />
+        )}
       </div>
 
       {(screenshots[activeIndex].caption || screenshots.length > 1) && (
