@@ -524,11 +524,14 @@ export const FEATURES: FeatureDefinition[] = [
     title: 'Campaign Images',
     benefitHeadline: 'Your images, ready for every platform',
     description:
-      'Upload your own photographs, or pull them in from another page. Everything for the campaign sits in one place, and PolyWiz sizes each picture correctly for wherever it is going.',
+      'Upload your own photographs, or pull them in from another page. Every picture the campaign can draw on sits in one pool, each one labelled so the right image reaches the right post, and sized correctly for wherever it is going.',
+    // The pool comes first and the pipeline last. This carousel used to be three
+    // renderings of the same diagram, all of them leading with the step that
+    // matters least.
     images: [
-      { src: '/images/features/campaign-image-library.png', caption: 'Campaign image library with scraped images available during post editing' },
-      { src: '/images/features/image-edges-extended-to-fit.png', caption: 'Image edges extended automatically to fit platform aspect ratios' },
-      { src: '/images/features/platform-auto-crop-formats.png', caption: 'Platform-specific auto-crop for square, portrait, landscape, and vertical formats' },
+      { src: '/images/features/campaign-images-panel-captions-and-upload.jpg', caption: 'Campaign images panel explaining what each field is for, with drag and drop upload and an option to add images from a web page' },
+      { src: '/images/features/campaign-image-pool-uploaded-with-captions.jpg', caption: 'Uploaded images in the pool, each with its caption, the artist or story it belongs to, and a description used only to match pictures to posts' },
+      { src: '/images/features/campaign-image-preparation-steps.png', caption: 'How a campaign image is prepared: per-platform sizing, smart compression, one copy per picture, optional edge extension, and permanent hosting' },
     ],
     cta: 'See Campaign Images',
     detailPageTitle: 'Campaign Images',
@@ -538,15 +541,21 @@ export const FEATURES: FeatureDefinition[] = [
       paragraph1:
         'Your best photographs are rarely on the page you are promoting. They are on a hard drive, in the folder from the opening, or attached to an email from the artist. <strong>A campaign built only from what a web page gave up is a campaign missing its best pictures.</strong>',
       paragraph2:
-        'So bring your own. Upload from your machine or import from another page, and everything lands in one place for the campaign, labelled with where it came from. Captions you correct stay corrected, and your pictures are spread across the campaign rather than one image doing all the work.',
+        'So bring your own. Upload from your machine or import from another page, and every picture the campaign can draw on lands in one pool. Each one carries the caption readers will see, and can be tied to the artist, person or story it belongs to, so a post about someone else is never handed that picture. Captions you correct stay corrected, and your images are spread across the campaign rather than one photograph doing all the work.',
     },
+    // Ordered so the pool comes first and the plumbing last. Per-platform sizing
+    // is the one people actually ask for; edge extension is an optional repair
+    // for pictures that do not fit, and belongs near the bottom.
     details: [
-      'Upload your own images to a campaign, or import them from another page',
-      'Every picture for the campaign sits in one place, labelled with where it came from',
+      'Upload your own images to a campaign, or import them from another web page',
+      'Every picture the campaign can draw on sits in one pool, labelled with where it came from',
+      'Each image carries the caption readers see, and the artist, person or story it belongs to, so a post about someone else never gets handed that picture',
       'Captions you write or correct stay that way, even when posts are generated again',
-      'PolyWiz describes what is in a picture without ever guessing who made it. It writes "a large abstract canvas in reds", never an attribution',
       'Your images are spread across the campaign instead of one picture carrying every post',
-      'Automatic sizing and cropping for each platform, including extending an image that does not quite fit',
+      'PolyWiz describes what is in a picture without ever guessing who made it. It writes "a large abstract canvas in reds", never an attribution',
+      'Cropping, dimensions and resolution set automatically for each platform',
+      'Optional edge extension when a picture does not fit a platform shape, so the subject is not cropped away to make it fit',
+      'Every image stored and served permanently, for as long as the post lives',
     ],
   },
   {
