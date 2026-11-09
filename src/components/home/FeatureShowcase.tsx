@@ -1,15 +1,15 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { ImageLightbox } from '@/components/ui/ImageLightbox';
 import { CarouselArrows } from '@/components/ui/CarouselArrows';
-import type { FeatureDefinition } from '@/config/tools';
+import { FeatureMedia } from '@/components/ui/FeatureMedia';
+import type { FeatureDefinition, FeatureImage } from '@/config/tools';
 
-function ImageCarousel({ images, alt }: { images: { src: string; caption?: string }[]; alt: string }) {
+function ImageCarousel({ images, alt }: { images: FeatureImage[]; alt: string }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const ref = useRef(null);
@@ -48,11 +48,9 @@ function ImageCarousel({ images, alt }: { images: { src: string; caption?: strin
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             className="absolute inset-6"
           >
-            <Image
-              src={images[safeIndex].src}
+            <FeatureMedia
+              image={images[safeIndex]}
               alt={images[safeIndex].caption || `${alt} - view ${safeIndex + 1}`}
-              fill
-              className="object-contain"
             />
           </motion.div>
         </AnimatePresence>

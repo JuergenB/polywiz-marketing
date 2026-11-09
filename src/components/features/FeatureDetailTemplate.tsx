@@ -1,17 +1,17 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { EarlyAccessButton } from '@/components/ui/EarlyAccessButton';
 import { Container } from '@/components/ui/Container';
 import { ImageLightbox } from '@/components/ui/ImageLightbox';
 import { CarouselArrows } from '@/components/ui/CarouselArrows';
+import { FeatureMedia } from '@/components/ui/FeatureMedia';
 import { HorizontalTimeline } from '@/components/ui/HorizontalTimeline';
 import { CampaignTypeGrid } from '@/components/features/CampaignTypeGrid';
 import { CheckCircle } from 'lucide-react';
-import type { FeatureDefinition } from '@/config/tools';
+import type { FeatureDefinition, FeatureImage } from '@/config/tools';
 import { resolveIcon } from '@/config/tools';
 import { siteConfig } from '@/config/site';
 
@@ -19,7 +19,7 @@ function ScreenshotCarousel({
   screenshots,
   alt,
 }: {
-  screenshots: { src: string; caption?: string }[];
+  screenshots: FeatureImage[];
   alt: string;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -37,11 +37,13 @@ function ScreenshotCarousel({
 
   // Every slide gets the same dwell time. The first one used to get 2000ms
   // against everyone else's 4000ms, which read as a flash rather than a slide.
+  // The exception is an animation, which holds for its own length so it is not
+  // cut off partway through.
   useEffect(() => {
     if (screenshots.length <= 1 || isPaused || !isInView) return;
     const timeout = setTimeout(() => {
       setActiveIndex((prev) => (prev + 1) % screenshots.length);
-    }, 4000);
+    }, screenshots[activeIndex].durationMs ?? 4000);
     return () => clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenshots.length, isPaused, isInView, activeIndex]);
@@ -76,11 +78,9 @@ function ScreenshotCarousel({
             transition={{ duration: 0.5, ease: 'easeInOut' }}
             className="absolute inset-6"
           >
-            <Image
-              src={screenshots[activeIndex].src}
+            <FeatureMedia
+              image={screenshots[activeIndex]}
               alt={screenshots[activeIndex].caption || `${alt} - view ${activeIndex + 1}`}
-              fill
-              className="object-contain"
             />
           </motion.div>
         </AnimatePresence>
@@ -314,10 +314,11 @@ export default function FeatureDetailTemplate({ feature }: { feature: FeatureDef
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-              Ready to try {feature.title}?
+              {feature.closing?.headline ?? `Ready to try ${feature.title}?`}
             </h2>
             <p className="mt-4 text-lg text-gray-400">
-              Get early access to PolyWiz and start building sustained social media campaigns for your organization.
+              {feature.closing?.body ??
+                'Get early access to PolyWiz and start building sustained social media campaigns for your organization.'}
             </p>
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <EarlyAccessButton className="inline-flex items-center justify-center rounded-lg bg-primary-400 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-300 active:bg-primary-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400">

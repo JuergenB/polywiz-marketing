@@ -65,8 +65,13 @@ export function resolveIcon(name: string): LucideIcon {
 export type FeatureStatus = 'live' | 'coming-soon';
 
 export interface FeatureImage {
+  /** The still. For an animation, this is its finished frame and its fallback. */
   src: string;
   caption?: string;
+  /** A silent looping animation, played over the still. Sound is removed in the file itself. */
+  video?: string;
+  /** How long a rotating carousel holds this slide. Set it to the animation's length. */
+  durationMs?: number;
 }
 
 export interface HowItWorksStep {
@@ -125,6 +130,13 @@ export interface FeatureDefinition {
   campaignTypes?: {
     subtitle: string;
     types: CampaignType[];
+  };
+  /** Replaces the "Live" badge for a feature people are given on request. */
+  availabilityBadge?: string;
+  /** Replaces the detail page's closing pitch, which otherwise talks about social media. */
+  closing?: {
+    headline: string;
+    body: string;
   };
 }
 
@@ -312,7 +324,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'tone-voice-system',
     slug: 'tone-voice-system',
-    sortOrder: 7,
+    sortOrder: 8,
     status: 'live',
     iconName: 'SlidersHorizontal',
     iconColorClass: 'text-accent-400',
@@ -405,7 +417,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'cover-slide-designer',
     slug: 'cover-slide-designer',
-    sortOrder: 8,
+    sortOrder: 9,
     status: 'live',
     iconName: 'Layers',
     iconColorClass: 'text-accent-400',
@@ -437,7 +449,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'quick-post',
     slug: 'quick-post',
-    sortOrder: 9,
+    sortOrder: 10,
     status: 'live',
     iconName: 'Zap',
     iconColorClass: 'text-primary-400',
@@ -463,7 +475,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'multi-platform-publisher',
     slug: 'multi-platform-publisher',
-    sortOrder: 10,
+    sortOrder: 11,
     status: 'live',
     iconName: 'LayoutGrid',
     iconColorClass: 'text-secondary-400',
@@ -489,7 +501,7 @@ export const FEATURES: FeatureDefinition[] = [
   {
     id: 'brand-manager',
     slug: 'brand-manager',
-    sortOrder: 11,
+    sortOrder: 12,
     status: 'live',
     iconName: 'Building2',
     iconColorClass: 'text-accent-400',
@@ -594,6 +606,75 @@ export const FEATURES: FeatureDefinition[] = [
       'Figures appear wherever each platform reports them, and PolyWiz says so plainly when one does not',
     ],
   },
+  {
+    // The twelfth entry, on purpose (#10). It is a different channel with its
+    // own flow, not a slice of a social feature.
+    //
+    // ⛔ Every picture here comes from a test run on The Intersect or from an
+    // animation with made-up names. Never publish a screen from a live client
+    // run, and never promise a direct connection to an email service: none is
+    // built, so the words are "copy into your email platform".
+    id: 'email-campaigns',
+    slug: 'email-campaigns',
+    sortOrder: 7,
+    status: 'live',
+    availabilityBadge: 'On request',
+    iconName: 'Mail',
+    iconColorClass: 'text-primary-400',
+    homepageLabel: 'Email Campaigns · On request',
+    title: 'Email Campaigns',
+    benefitHeadline: 'A season of email, and your own people approve every one',
+    description:
+      'Email Campaigns turns the stories you already have into a planned season of email. Someone on your team reads and approves each one, and PolyWiz sends nothing. Approved emails wait in one place, ready to copy into your email platform. Given to teams on request.',
+    // Leads with who decides, ends with where the finished email goes.
+    images: [
+      { src: '/images/features/email-campaigns-your-voice-your-people-deciding.jpg', video: '/images/features/email-campaigns-your-voice-your-people-deciding.mp4', durationMs: 14500, caption: 'A season of email on one calendar, with awareness emails, fundraising asks and thank-yous, above the words Your voice. Your people deciding.' },
+      { src: '/images/features/email-campaigns-review-approve-or-needs-changes.jpg', caption: 'One email under review, with its picture, subject and text, and buttons to comment, mark it as needing changes, or approve it' },
+      { src: '/images/features/email-campaigns-who-does-what-editor-consultant.jpg', video: '/images/features/email-campaigns-who-does-what-editor-consultant.mp4', durationMs: 16000, caption: 'Who does what: an Editor decides what gets written and approves, while a Consultant reads, comments, fixes text and pictures, and copies the finished email but cannot approve' },
+      { src: '/images/features/email-campaigns-stories-become-a-planned-season.jpg', video: '/images/features/email-campaigns-stories-become-a-planned-season.mp4', durationMs: 19500, caption: 'An impact report, a website and social campaigns settling onto a calendar as a planned season of email' },
+      { src: '/images/features/email-campaigns-december-calendar-ask-window.jpg', caption: 'A December calendar with awareness emails and fundraising asks placed on sending days inside a shaded ask window' },
+      { src: '/images/features/email-campaigns-fundraising-windows-on-a-season.jpg', video: '/images/features/email-campaigns-fundraising-windows-on-a-season.mp4', durationMs: 24000, caption: 'Two fundraising windows on a season calendar, with awareness emails spaced through the weeks around them' },
+      { src: '/images/features/email-campaigns-right-picture-for-each-story.jpg', video: '/images/features/email-campaigns-right-picture-for-each-story.mp4', durationMs: 20000, caption: 'Pictures from three sources ranked for one story, with a picture of someone else kept off it and the best one placed in the email' },
+      { src: '/images/features/email-campaigns-approved-email-ready-to-copy.jpg', caption: 'An approved email ready to copy, with a copy button for the subject, the preheader and the HTML, and a button to mark it taken' },
+    ],
+    cta: 'See Email Campaigns',
+    detailPageTitle: 'Email Campaigns',
+    detailPageDescription:
+      'Your own people review and approve every email, and PolyWiz sends nothing. It turns the stories you already have into a planned season of email, ready to copy into your email platform. Available to teams on request.',
+    opportunityStatement: {
+      paragraph1:
+        'Most arts organizations are sitting on far more stories than they ever get to tell by email. There is the impact report, a year of social campaigns, the pages on your website. <strong>Meanwhile the fundraising appeal gets written one message at a time, close to the deadline, by someone who is already busy.</strong>',
+      paragraph2:
+        'Email Campaigns starts from what you already have and lays out a whole season: awareness emails, fundraising asks in the windows you choose, and thank-yous. PolyWiz writes the first draft in your voice. Your people decide which emails get written, read every one, change what they want, and approve it. <strong>PolyWiz sends nothing.</strong> Approved emails go to whoever runs your email, to copy into the platform you already use.',
+    },
+    howItWorks: {
+      subtitle: 'From the stories you have to emails your team has approved.',
+      steps: [
+        { title: 'Bring your stories', description: 'Your PolyWiz campaigns, links to web pages, and documents such as an annual report.' },
+        { title: 'Plan the season', description: 'PolyWiz proposes a lineup and you mark which emails to write. Asks go in the windows you set, and awareness emails fill the room that is left.' },
+        { title: 'Your people review', description: 'Read each draft at desktop and phone width, comment, change the words or the picture, then approve it or mark it as needing changes.' },
+        { title: 'Copy into your email platform', description: 'Approved emails wait in one place, with the subject, text, HTML and picture ready to copy. PolyWiz sends nothing.' },
+      ],
+    },
+    details: [
+      'Your own people approve every email. An email reaches the ready-to-copy list only after someone on your team has approved it',
+      'PolyWiz sends nothing. Whoever runs your email copies the approved ones into your email platform',
+      'Two kinds of access: an Editor decides what gets written and approves it, and a Consultant can read, comment, fix text and pictures and copy the finished email, but cannot approve',
+      'Starts from what you already have: PolyWiz campaigns, links to web pages and uploaded documents',
+      'Awareness emails, fundraising asks and thank-yous laid out on one calendar, with nothing planned on quiet days such as holidays',
+      'Fundraising asks run in windows you set, and each window can lean early, stay even, or lean late',
+      'Each email is written in your voice and signed by the person or organization you choose',
+      'A picture is chosen for each story from that story\'s own images and your libraries, and a picture of someone else stays off it. You can swap it or crop it yourself',
+      'Automatic checks flag things like a subject line that runs long. They flag and never edit',
+      'A rewrite appears beside the current text and changes nothing until you apply it',
+      'If someone edits an email after it was approved, the email says who and when',
+      'Given to teams on request, and access is set person by person',
+    ],
+    closing: {
+      headline: 'Interested in Email Campaigns?',
+      body: 'Email Campaigns is given to teams on request. Ask for early access, tell us you are interested in email, and we will talk through whether it fits your organization.',
+    },
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -609,8 +690,9 @@ export function getLiveFeatures(): FeatureDefinition[] {
 }
 
 export function getFeaturedFeatures(): FeatureDefinition[] {
-  // Top 6 features for the homepage showcase
-  return getLiveFeatures().slice(0, 6);
+  // The large homepage sections. Email Campaigns (#10) took a seventh rather
+  // than displacing any of the existing six.
+  return getLiveFeatures().slice(0, 7);
 }
 
 export function getFeatureBySlug(slug: string): FeatureDefinition | undefined {

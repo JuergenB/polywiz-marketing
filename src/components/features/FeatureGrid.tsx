@@ -26,11 +26,15 @@ export function FeatureGrid({ features }: { features: FeatureDefinition[] }) {
               <p className="mt-2 text-sm/6 text-gray-400">
                 {feature.description}
               </p>
-              {feature.status === 'live' && (
+              {feature.availabilityBadge ? (
+                <span className="mt-4 inline-flex items-center rounded-md bg-accent-400/10 px-2 py-1 text-xs font-semibold text-accent-400 ring-1 ring-inset ring-accent-400/20">
+                  {feature.availabilityBadge}
+                </span>
+              ) : feature.status === 'live' ? (
                 <span className="mt-4 inline-flex items-center rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-semibold text-emerald-400 ring-1 ring-inset ring-emerald-500/20">
                   Live
                 </span>
-              )}
+              ) : null}
             </div>
           </Link>
         );

@@ -132,9 +132,23 @@ Present PolyWiz's capabilities as benefit-focused cards/sections:
 | Campaign Images | Your images, ready for every platform | Upload your own or import from another page. One pool with visible provenance, captions that survive regeneration, images spread across the campaign, sized per platform |
 | Results & Reporting | Know what landed | Impressions, engagement, clicks and follower growth, next to what shipped and what failed. Branded short links are supporting detail inside it, never a headline |
 
-⚠️ The registry is **11 entries** and the count must not grow (#5, #6). `Image Optimizer` became
-`Campaign Images`; `Link Shortener` + `Campaign Dashboard` merged into `Results & Reporting`.
-Retired slugs 308-redirect in `next.config.js`.
+| Email Campaigns | A season of email, and your own people approve every one | Stories you already have become a planned season. Your people approve each email, PolyWiz sends nothing, and approved emails are copied into your email platform. Given on request |
+
+⚠️ The registry is **12 entries**. The limit exists to stop one idea being split into several cards
+(#5, #6), not to block a genuinely new one: Juergen added Email Campaigns as the twelfth on
+2026-11-09 (#10) as "a major addition - which does not take away anything prior". Seven entries get
+a large homepage section. `Image Optimizer` became `Campaign Images`; `Link Shortener` +
+`Campaign Dashboard` merged into `Results & Reporting`. Retired slugs 308-redirect in `next.config.js`.
+
+⛔ **Email Campaigns rules (#10):** say "copy into your email platform" and promise no direct
+connection to any email service, because none is built. Say it is given on request. Never embed the
+walkthrough video, which is addressed to named people. Never publish a screen from a live client
+run; pictures come from a test run on The Intersect. Read every screen at full size first: even the
+test run's stories mention AI, show a model name or carry another organization's logo.
+
+**Animations in the carousels:** a `FeatureImage` can carry `video` (silent MP4, sound removed in the
+file) and `durationMs` (how long a rotating carousel holds it). `src` stays the still, which is the
+fallback and what visitors who ask for reduced motion see. `FeatureMedia.tsx` plays it.
 
 ⛔ **No internal machinery or vendor names in site copy** (owner decision, 2026-08-12): no post
 validators, no Firecrawl / Zernio / Replicate / Vercel Blob / Short.io / lnk.bio, no internal rule
@@ -337,8 +351,10 @@ These are the actual capabilities to market. Keep this list updated as the app e
 - Role-based access with user-brand mapping
 - Per-campaign editorial direction input
 - Feedback logging for post quality improvement
+- **Email Campaigns** (given per person on request): reads campaigns, links and uploaded documents, proposes a lineup, people mark what to write, plans awareness emails, fundraising windows and thank-yous on one calendar, drafts each email with a picture, Editors approve, Consultants read, comment, fix text and pictures and copy. Approved emails wait in a pool to be copied into an email platform. PolyWiz sends nothing
 
 ### Coming Soon
+- Direct connection to an email platform (a possibility only, not built; never promise it on the site)
 - AI image generation (Orshot carousels)
 - Pre-generation chatbot workflow
 - Deep artist research (Perplexity)

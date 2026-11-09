@@ -1,17 +1,13 @@
 'use client';
 
 import { useEffect, useCallback, useRef } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-
-interface LightboxImage {
-  src: string;
-  caption?: string;
-}
+import { FeatureMedia } from '@/components/ui/FeatureMedia';
+import type { FeatureImage } from '@/config/tools';
 
 interface ImageLightboxProps {
-  images: LightboxImage[];
+  images: FeatureImage[];
   open: boolean;
   index: number;
   onClose: () => void;
@@ -109,11 +105,9 @@ export function ImageLightbox({ images, open, index, onClose, onIndexChange }: I
             transition={{ duration: 0.2 }}
             className="relative mx-16 h-[80vh] w-[90vw] max-w-6xl cursor-pointer"
           >
-            <Image
-              src={images[index].src}
+            <FeatureMedia
+              image={images[index]}
               alt={images[index].caption || ''}
-              fill
-              className="object-contain"
               sizes="90vw"
               priority
             />
