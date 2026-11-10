@@ -612,8 +612,8 @@ export const FEATURES: FeatureDefinition[] = [
     //
     // ⛔ Every picture here comes from a test run on The Intersect or from an
     // animation with made-up names. Never publish a screen from a live client
-    // run, and never promise a direct connection to an email service: none is
-    // built, so the words are "copy into your email platform".
+    // run. A direct connection to email platforms is not built: describe it
+    // only as coming, as drafts a person still sends, and with no vendor name.
     id: 'email-campaigns',
     slug: 'email-campaigns',
     sortOrder: 7,
@@ -654,6 +654,7 @@ export const FEATURES: FeatureDefinition[] = [
         { title: 'Plan the season', description: 'PolyWiz proposes a lineup and you mark which emails to write. Asks go in the windows you set, and awareness emails fill the room that is left.' },
         { title: 'Your people review', description: 'Read each draft at desktop and phone width, comment, change the words or the picture, then approve it or mark it as needing changes.' },
         { title: 'Copy into your email platform', description: 'Approved emails wait in one place, with the subject, text, HTML and picture ready to copy. PolyWiz sends nothing.' },
+        { title: 'Export now, connect soon', description: 'Download approved emails as a zip today. A direct connection to email platforms is close: emails will arrive there as drafts, and your team still presses send.' },
       ],
     },
     details: [

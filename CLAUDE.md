@@ -140,8 +140,9 @@ Present PolyWiz's capabilities as benefit-focused cards/sections:
 a large homepage section. `Image Optimizer` became `Campaign Images`; `Link Shortener` +
 `Campaign Dashboard` merged into `Results & Reporting`. Retired slugs 308-redirect in `next.config.js`.
 
-⛔ **Email Campaigns rules (#10):** say "copy into your email platform" and promise no direct
-connection to any email service, because none is built. Say it is given on request. Never embed the
+⛔ **Email Campaigns rules (#10):** say "copy into your email platform". A direct connection is not
+built, so it is described only as coming, as drafts a person still sends, and never with a vendor
+name (Juergen, 2026-11-09, polywiz-app #576). Say it is given on request. Never embed the
 walkthrough video, which is addressed to named people. Never publish a screen from a live client
 run; pictures come from a test run on The Intersect. Read every screen at full size first: even the
 test run's stories mention AI, show a model name or carry another organization's logo.
@@ -354,7 +355,7 @@ These are the actual capabilities to market. Keep this list updated as the app e
 - **Email Campaigns** (given per person on request): reads campaigns, links and uploaded documents, proposes a lineup, people mark what to write, plans awareness emails, fundraising windows and thank-yous on one calendar, drafts each email with a picture, Editors approve, Consultants read, comment, fix text and pictures and copy. Approved emails wait in a pool to be copied into an email platform. PolyWiz sends nothing
 
 ### Coming Soon
-- Direct connection to an email platform (a possibility only, not built; never promise it on the site)
+- Direct connection to an email platform (not built; the site may say it is coming, as drafts a person still sends, with no vendor name)
 - AI image generation (Orshot carousels)
 - Pre-generation chatbot workflow
 - Deep artist research (Perplexity)
