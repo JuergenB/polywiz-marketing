@@ -5,7 +5,7 @@
 //
 // The app and the marketing site must never show different legal text.
 //
-// sha256(text) = 79cd168608062762376a082fa9b5d774e4d5e40bdb14fab9e333e7321bd43032
+// sha256(text) = e0b4a5e525dcfdd808ba648a928896de929390759e9fba8ec6399c0016f9e6f7
 
 /**
  * PolyWiz Privacy Policy — canonical text rendered at /privacy on both the app
@@ -111,6 +111,7 @@ We work with a set of carefully selected service providers to operate PolyWiz. T
 | **Firecrawl** | The **URLs you ask us to scrape** and their content | Reading source pages for campaigns |
 | **Replicate** | **Images** you choose to expand or upscale | AI image outpainting and upscaling |
 | **AssemblyAI** | **Your voice**, streamed from your microphone only while you record a voice note | Speech-to-text for voice notes. The audio is streamed to AssemblyAI for transcription and is not stored by PolyWiz; only the text is kept |
+| **ElevenLabs** | **Your voice**, streamed from your microphone only while you record a voice note, and a short list of your brand's names to listen for | Speech-to-text for voice notes, for brands set to use it. The audio is streamed to ElevenLabs for transcription and is not stored by PolyWiz; only the text is kept |
 | **Resend** | Your **email address** and message content | Transactional email |
 | **Short.io** | Destination URLs | Link shortening for posts |
 | **lnk.bio** | Post links and scheduling times, for brands with it enabled | Instagram link-in-bio sync |
