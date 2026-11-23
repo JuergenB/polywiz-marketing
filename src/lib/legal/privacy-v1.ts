@@ -5,7 +5,7 @@
 //
 // The app and the marketing site must never show different legal text.
 //
-// sha256(text) = 88bd04f23bd7c1f6640c6918724be7514464a8e563fc4ca5db6b70d4f4c4bcdc
+// sha256(text) = b5747e23c06782bf2f41e1e621ecb6f2521dd0afe60c2c4dcb7e6ddb7824392d
 
 /**
  * PolyWiz Privacy Policy — canonical text rendered at /privacy on both the app
@@ -60,7 +60,7 @@ Polymash, Inc., a Florida corporation. For anything in this policy — questions
 | **Agreement acceptance record** — the version you accepted, the timestamp, **your IP address**, and a hash of the exact text shown | A legal record of what you agreed to and when. The IP address helps verify the authenticity of an acceptance and prevent fraudulent or disputed account activity. See §6 — this record outlives your account |
 | Server and application logs, including IP addresses | Security, debugging, abuse prevention |
 | Usage and consumption records | Metering, and showing you your own usage |
-| **When you were last active** — one time on your account, to about the nearest hour, updated when you click or type in the application | So the PolyWiz staff know the product is in use and can be on hand to help. We keep only the latest time, not a history, and we don't record what you clicked or typed |
+| **When you are active** — the time you were last active, to about the nearest hour, and a short log of the times you started a working session | So the PolyWiz staff know the product is in use and can be on hand to help. We don't record what you clicked or typed |
 
 ### Information from services you connect
 
@@ -114,7 +114,7 @@ We work with a set of carefully selected service providers to operate PolyWiz. T
 | **AssemblyAI** | **Your voice**, streamed from your microphone only while you record a voice note | Speech-to-text for voice notes. The audio is streamed to AssemblyAI for transcription and is not stored by PolyWiz; only the text is kept |
 | **ElevenLabs** | **Your voice**, streamed from your microphone only while you record a voice note, and a short list of your brand's names to listen for | Speech-to-text for voice notes, for brands set to use it. The audio is streamed to ElevenLabs for transcription and is not stored by PolyWiz; only the text is kept |
 | **Resend** | Your **email address** and message content | Transactional email |
-| **Pushover** | Your **display name** and the time you became active, in a short notification | Tells the PolyWiz staff, by phone notification, that someone has started using it |
+| **Pushover** | Your **display name**, and your organization or role when you apply or register, in a short notification | Tells the PolyWiz staff, by phone notification, that someone has applied, registered or started using PolyWiz |
 | **Short.io** | Destination URLs | Link shortening for posts |
 | **lnk.bio** | Post links and scheduling times, for brands with it enabled | Instagram link-in-bio sync |
 | **Chatbase** | **Whatever you type into the in-app help chat**, plus a script loaded on dashboard pages | In-product help assistant |
@@ -136,7 +136,7 @@ We also share information when the law requires it, to protect rights and safety
 | Server and application logs | **30 days** |
 | Usage and consumption records | Life of the account, plus aggregate figures we keep indefinitely in de-identified form |
 | Support chat transcripts | Per Chatbase's retention; we don't keep a separate copy |
-| When you were last active | Only the latest time is kept, on your account record, and it goes when the account does |
+| When you are active | Life of the account, then deleted within **30 days** of a deletion request |
 
 **Published posts are the exception** — see §7.
 
